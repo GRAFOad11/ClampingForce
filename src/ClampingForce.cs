@@ -6,26 +6,18 @@ using System.Threading.Tasks;
 
 namespace MouldingApp
 {
-    public class Foce : FoceBase
+    public partial class Force : ForceBase
     { 
-        public Foce(string mould) : base(mould){}
-        public Foce(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+        public Force(string mould) : base(mould){}
+        public Force(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
                         : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
         public delegate void AddedDelegate(object sender, EventArgs args, string diameter);
-        public override event AddedDelegate Added;
+        public event AddedDelegate Added;
 
         public string[] materialList = new string[] {"GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66", "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP", "CP", "EVA", "PEEL", "PUR/TPU", "PPVC",
                                                       "ABS", "AAS/ASA", "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS", "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"};
         private List<double> dimensions = new List<double>();
         private List<int> pressure = new List<int>();
-
-        public interface IForce
-        {
-            public void WidthSet(string width);
-            Statiscics GetStatiscics();
-            string Mould{get;}            
-            event AddedDelegate Added;
-        }
         
         public override void WidthSet(string width)
         {
