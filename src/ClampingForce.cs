@@ -31,7 +31,7 @@ namespace MouldingApp
         {
             if (double.TryParse(width, out double result))
             {
-                Console.WriteLine($"OK mam to {result}");
+                Console.WriteLine($"OK {result}");
                 this.Width = result;
             } 
             else
