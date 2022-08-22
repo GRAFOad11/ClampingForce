@@ -8,7 +8,7 @@ namespace MouldingApp
     {
         static void Main(string[] args)
         {
-            var force = new FORCE("Any");
+            var force = new Foce("Any");
             force.Added += OnAdded;
 
             Terminal(force);
@@ -22,7 +22,7 @@ namespace MouldingApp
             }
         }
 
-        private static void Terminal(FORCE force)
+        private static void Terminal(Foce force)
         {
             while (true)
             {

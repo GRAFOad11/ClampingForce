@@ -1,12 +1,12 @@
 namespace MouldingApp
 {
-    public class FORCEobject
+    public class FoceObject
     {
-        public FORCEobject(string mould)
+        public FoceObject(string mould)
         {
            this.Mould = mould;
         }
-        public FORCEobject(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure)
+        public FoceObject(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure)
         {
            this.Mould = mould;
            this.Width = width;

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MouldingApp
 {
-    public class FORCE : FORCEbase
+    public class Foce : FoceBase
     { 
-        public FORCE(string mould) : base(mould){}
-        public FORCE(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+        public Foce(string mould) : base(mould){}
+        public Foce(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
                         : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
         public delegate void AddedDelegate(object sender, EventArgs args, string diameter);
         public override event AddedDelegate Added;
