@@ -34,6 +34,8 @@ namespace MouldingApp
         public double Diameter { get{return this.diameter;} set{this.diameter = value;}}
         public string Material { get{return this.material;} set{ if(!string.IsNullOrEmpty(value)){this.material = value;}}}
         public double CavityPressure { get{return this.cavityPressure;} set{this.cavityPressure = value;}}
+        public string[] materialList = new string[] {"GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66", "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP", "CP",
+        "EVA", "PEEL", "PUR/TPU", "PPVC", "ABS", "AAS/ASA", "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS", "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"};
     }
 
 }

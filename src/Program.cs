@@ -8,9 +8,10 @@ namespace MouldingApp
     {
         static void Main(string[] args)
         {
+            new SaveForce("Any");
             var force = new Force("Any");
-            force.Added += OnAdded;
 
+            force.Added += OnAdded;
             Terminal(force);
 
             void OnAdded(object sender, EventArgs args, string diameter)
@@ -22,15 +23,19 @@ namespace MouldingApp
             }
         }
 
-        private static void Terminal(Force force)
+        private static void Terminal(IMould force)
         {
             while (true)
-            {
+            {   
+                
                 Console.WriteLine();
-                Console.WriteLine("Witam w programie do obliczania bezpiecznej siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c");
+                Console.WriteLine("Witam w programie do obliczania siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c");
                 Console.WriteLine();
-                Console.WriteLine("Czy detal jest okrągły? tak(Y) nie(N)");
+                Console.WriteLine("Podaj nazwę formy");
                 var input = Console.ReadLine();
+                force.SetMouldID(input);
+                Console.WriteLine("Czy detal jest okrągły? tak(Y) nie(N)");
+                input = Console.ReadLine();
 
                 if (input == "q")
                 {

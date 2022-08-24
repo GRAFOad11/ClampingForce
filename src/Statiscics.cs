@@ -7,5 +7,6 @@ namespace MouldingApp
         public double Low;
         public double Width;
         public double Hight;
+        
     }
 }

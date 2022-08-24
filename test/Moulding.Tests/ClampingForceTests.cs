@@ -9,7 +9,7 @@ namespace Moulding.Tests
             var forces = new Force("Casing");
             forces.AddDimension(5, 2);
             //act
-            var result = forces.GetStatistics();
+            var result = forces.GetStatiscics();
             //assert
             Assert.Equal(3.5, result.Averidge, 1);
             Assert.Equal(5, result.High);
