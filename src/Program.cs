@@ -8,14 +8,11 @@ namespace MouldingApp
     {
         static void Main(string[] args)
         {
-
             var force = new ForceMemory("Any");
-
+            var forceS = new ForceSave("Any");
             force.Added += OnAdded;
+            Terminal(force, forceS);
             
-            Terminal(force);
-            
-
             void OnAdded(object sender, EventArgs args, string diameter)
             {
                 if (double.TryParse(diameter, out double result) && result < 3)
@@ -24,12 +21,10 @@ namespace MouldingApp
                 }
             }
         }
-
-        private static void Terminal(IMould force)
+        private static void Terminal(ForceMemory force, ForceSave forceS)
         {
             while (true)
             {   
-                
                 Console.WriteLine();
                 Console.WriteLine("Witam w programie do obliczania siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c");
                 Console.WriteLine();
@@ -57,6 +52,7 @@ namespace MouldingApp
                         Console.WriteLine($"Podaj długość detalu (centymetry)");
                         input = Console.ReadLine();
                         force.WidthSet(input);
+                        forceS.WidthSet(input);
                         Console.WriteLine($"Podaj szerokość detalu (centymetry)");
                         input = Console.ReadLine();
                         force.HightSet(input);
@@ -94,7 +90,6 @@ namespace MouldingApp
                     Console.WriteLine(ex.Message);
                 }
                 finally { }
-
             }
         }
     }

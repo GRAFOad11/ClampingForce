@@ -3,11 +3,11 @@ using System.IO;
 
 namespace MouldingApp
 {
-    public class SaveForce : ForceBase
+    public class ForceSave : ForceBase, IMould
     {
-        public SaveForce(string mould) : base(mould){}
+        public ForceSave(string mould) : base(mould){}
         
-        public SaveForce(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+        public ForceSave(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
         : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
 
         public override void AddDimension(double width, double hight)

@@ -1,6 +1,6 @@
 namespace MouldingApp
 {
-    public abstract class ForceBase : IMould
+    public abstract class ForceBase
     {
         public ForceBase(string mould)
         {

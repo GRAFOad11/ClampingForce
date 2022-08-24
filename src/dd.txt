@@ -22,3 +22,27 @@ Powierzchnia wtrysku 200,000cm2
 Min Siła Zwarcia 49 TON
 Optymalna Siła Zwarcia 54 TON
 
+Bryła Prostokątna
+Szerokość 5cm
+Grubość ścianki 1mm
+Droga płynięcia 10mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 10:1
+Ciśnienie z wykresu 181bar
+Ciśnienie w gnieżdzie 181bar
+Powierzchnia wtrysku 20,000cm2
+Min Siła Zwarcia 4 TON
+Optymalna Siła Zwarcia 4 TON
+
+Bryła Prostokątna
+Szerokość 12cm
+Grubość ścianki 1mm
+Droga płynięcia 100mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 100:1
+Ciśnienie z wykresu 247bar
+Ciśnienie w gnieżdzie 247bar
+Powierzchnia wtrysku 1 476,000cm2
+Min Siła Zwarcia 364 TON
+Optymalna Siła Zwarcia 401 TON
+

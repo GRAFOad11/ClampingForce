@@ -171,7 +171,6 @@ namespace MouldingApp
                 Console.WriteLine("lub");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(material)}");
             }
-            
             return this.Material;
         }
 
