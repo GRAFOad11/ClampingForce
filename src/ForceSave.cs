@@ -10,8 +10,6 @@ namespace MouldingApp
         public SaveForce(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
         : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
 
-
-
         public override void AddDimension(double width, double hight)
         {
             throw new System.NotImplementedException();

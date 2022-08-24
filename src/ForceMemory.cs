@@ -4,10 +4,10 @@ using System.IO;
 
 namespace MouldingApp
 {
-    public class Force : ForceBase
+    public class ForceMemory : ForceBase
     { 
-        public Force(string mould) : base(mould){}
-        public Force(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+        public ForceMemory(string mould) : base(mould){}
+        public ForceMemory(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
                         : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
         public delegate void AddedDelegate(object sender, EventArgs args, string diameter);
         public event AddedDelegate Added;

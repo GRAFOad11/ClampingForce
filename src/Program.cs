@@ -9,11 +9,12 @@ namespace MouldingApp
         static void Main(string[] args)
         {
 
-            var force = new Force("Any");
+            var force = new ForceMemory("Any");
 
             force.Added += OnAdded;
             
             Terminal(force);
+            
 
             void OnAdded(object sender, EventArgs args, string diameter)
             {

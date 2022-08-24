@@ -6,7 +6,7 @@ namespace Moulding.Tests
         public void Test1()
         {
             //arrange
-            var forces = new Force("Casing");
+            var forces = new ForceMemory("Casing");
             forces.AddDimension(5, 2);
             //act
             var result = forces.GetStatiscics();
