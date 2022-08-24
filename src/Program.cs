@@ -8,10 +8,11 @@ namespace MouldingApp
     {
         static void Main(string[] args)
         {
-            new SaveForce("Any");
+
             var force = new Force("Any");
 
             force.Added += OnAdded;
+            
             Terminal(force);
 
             void OnAdded(object sender, EventArgs args, string diameter)

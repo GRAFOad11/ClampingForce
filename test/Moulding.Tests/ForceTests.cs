@@ -1,6 +1,6 @@
 namespace Moulding.Tests
 {
-    public class MouldingTests
+    public class ForceTests
     {
         [Fact]
         public void Test1()

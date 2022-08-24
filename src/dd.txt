@@ -1,0 +1,24 @@
+Bryła Okrągła
+Średnica 22cm
+Grubość ścianki 1mm
+Droga płynięcia 200mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 200:1
+Ciśnienie z wykresu 438bar
+Ciśnienie w gnieżdzie 438bar
+Powierzchnia wtrysku 379,940cm2
+Min Siła Zwarcia 166 TON
+Optymalna Siła Zwarcia 200 TON
+
+Bryła Prostokątna
+Szerokość 10cm
+Grubość ścianki 1mm
+Droga płynięcia 100mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 100:1
+Ciśnienie z wykresu 247bar
+Ciśnienie w gnieżdzie 247bar
+Powierzchnia wtrysku 200,000cm2
+Min Siła Zwarcia 49 TON
+Optymalna Siła Zwarcia 54 TON
+

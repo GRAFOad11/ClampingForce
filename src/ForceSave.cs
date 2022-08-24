@@ -6,6 +6,9 @@ namespace MouldingApp
     public class SaveForce : ForceBase
     {
         public SaveForce(string mould) : base(mould){}
+        
+        public SaveForce(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
 
 
 
@@ -78,7 +81,6 @@ namespace MouldingApp
         {
             if (double.TryParse(width, out double result))
             {
-                this.Width = result;
                 using (var writer = File.AppendText($"{Mould}.txt"))
                 {
                     writer.WriteLine($"Długość {width}cm");
