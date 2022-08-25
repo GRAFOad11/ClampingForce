@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+
 namespace MouldingApp
 {
-    public abstract class ForceBase
+    public abstract class ForceBase : IMould
     {
         public ForceBase(string mould)
         {
@@ -36,7 +38,8 @@ namespace MouldingApp
         public double CavityPressure { get{return this.cavityPressure;} set{this.cavityPressure = value;}}
         public string[] materialList = new string[] {"GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66", "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP", "CP",
         "EVA", "PEEL", "PUR/TPU", "PPVC", "ABS", "AAS/ASA", "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS", "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"};
-        
+        public List<double> dimensions = new List<double>();
+        public List<int> pressure = new List<int>();
         public abstract void WidthSet(string width);
         public abstract Statiscics GetStatiscics();
         public abstract void HightSet(string hight);

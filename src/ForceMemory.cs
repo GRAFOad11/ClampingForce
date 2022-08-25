@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace MouldingApp
 {
@@ -12,8 +10,7 @@ namespace MouldingApp
         public delegate void AddedDelegate(object sender, EventArgs args, string diameter);
         public event AddedDelegate Added;
 
-        private List<double> dimensions = new List<double>();
-        private List<int> pressure = new List<int>();
+        
         
         public override void WidthSet(string width)
         {
@@ -34,10 +31,6 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.Hight = result;
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Szerokość {hight}cm");
-                }
             } 
             else
             {
@@ -51,10 +44,6 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.MeltLenth = result;
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Droga płynięcia {melt}mm");
-                }
             } 
             else
             {
@@ -68,10 +57,6 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Thickness = result;
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Grubość ścianki {thickness}mm");
-                }
             } 
             else
             {
@@ -82,24 +67,13 @@ namespace MouldingApp
         }
         public override void ShapeSet(string shape)
         {
-            string s = "Prostokątna";
-
             if(shape == "Y" || shape == "y")
             {
                 this.Shape = true;
-                s = "Okrągła";
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Bryła {s}");
-                }
             }
             else
             {
                 this.Shape = false;
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Bryła {s}");
-                }
             }
         }
         public override void DiameterSet(string diameter)
@@ -111,10 +85,6 @@ namespace MouldingApp
                 if (Added != null)
                 {
                     Added(this, new EventArgs(), diameter);
-                }
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Średnica {diameter}cm");
                 }
             } 
             else
@@ -129,10 +99,6 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.CavityPressure = result;
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Ciśnienie gniazda {cavityPressure}bar");
-                }
             } 
             else
             {
@@ -160,10 +126,6 @@ namespace MouldingApp
             {
                 Console.WriteLine();
                 Console.WriteLine($"Przyjmuję viscosity o wartości {material}");
-                using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Viscosity {material}");
-                }
             }
             else
             {
@@ -180,10 +142,6 @@ namespace MouldingApp
             double ratio = 0.0;
             ratio = this.MeltLenth / this.Thickness;
             Console.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
-            using (var writer = File.AppendText($"{Mould}.txt"))
-            {
-                writer.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
-            }
     
             switch(ratio) 
             {
@@ -203,16 +161,8 @@ namespace MouldingApp
                 break;
             }
             Console.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
-            using (var writer = File.AppendText($"{Mould}.txt"))
-            {
-                writer.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
-            }
             pressure = pressure * this.Thickness;
             Console.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
-            using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
-                }
             this.CavityPressure = pressure;
             CountForce();
         }
@@ -239,23 +189,10 @@ namespace MouldingApp
                 Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm"); 
             }
             Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
-            using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
-                }
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
-            using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Min Siła Zwarcia {force:N0} TON");
-                }
             Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
             Console.WriteLine();
             Console.WriteLine();
-            using (var writer = File.AppendText($"{Mould}.txt"))
-                {
-                    writer.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
-                    writer.WriteLine("");
-                }
         }
         public override void SetMouldID(string mould)
         {

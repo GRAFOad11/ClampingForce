@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace MouldingApp
 {
@@ -9,9 +7,9 @@ namespace MouldingApp
         static void Main(string[] args)
         {
             var force = new ForceMemory("Any");
-            var forceS = new ForceSave("Any");
+            var forceSave = new ForceSave("Any");
             force.Added += OnAdded;
-            Terminal(force, forceS);
+            UserInterface(force, forceSave);
             
             void OnAdded(object sender, EventArgs args, string diameter)
             {
@@ -21,25 +19,30 @@ namespace MouldingApp
                 }
             }
         }
-        private static void Terminal(ForceMemory force, ForceSave forceS)
+        private static void UserInterface(IMould force, IMould forceSave)
         {
             while (true)
             {   
                 Console.WriteLine();
                 Console.WriteLine("Witam w programie do obliczania siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c");
                 Console.WriteLine();
-                Console.WriteLine("Podaj nazwę formy");
+                Console.WriteLine("Czy chcesz aby program zapisał wynik do pliku tekstowego? tak(Y) nie(N)");
                 var input = Console.ReadLine();
-                force.SetMouldID(input);
-                Console.WriteLine("Czy detal jest okrągły? tak(Y) nie(N)");
-                input = Console.ReadLine();
-
-                if (input == "q")
+                if (input == "Y" || input == "y")
+                {
+                    force = forceSave;
+                }
+                else if (input == "q")
                 {
                     break;
                 }
                 try
                 {
+                    Console.WriteLine("Podaj nazwę formy");
+                    input = Console.ReadLine();
+                    force.SetMouldID(input);
+                    Console.WriteLine("Czy detal jest okrągły? tak(Y) nie(N)");
+                    input = Console.ReadLine();
                     force.ShapeSet(input);
                     if (input == "Y" || input == "y")
                     {
@@ -52,7 +55,6 @@ namespace MouldingApp
                         Console.WriteLine($"Podaj długość detalu (centymetry)");
                         input = Console.ReadLine();
                         force.WidthSet(input);
-                        forceS.WidthSet(input);
                         Console.WriteLine($"Podaj szerokość detalu (centymetry)");
                         input = Console.ReadLine();
                         force.HightSet(input);
