@@ -174,7 +174,7 @@ namespace MouldingApp
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();
-            result.Averidge = 0.0;
+            /*result.Averadge = 0.0;
             result.High = double.MinValue;
             result.Low = double.MaxValue;
             result.Width = this.Width;
@@ -182,13 +182,13 @@ namespace MouldingApp
             {
                 result.Low = Math.Min(dimension, result.Low);
                 result.High = Math.Max(dimension, result.High);
-                result.Averidge += dimension;
+                result.Averadge += dimension;
             }
-            result.Averidge /= dimensions.Count;
+            result.Averadge /= dimensions.Count;
             Console.WriteLine($" Low {result.Low}");
             Console.WriteLine($" High {result.High}");
-            Console.WriteLine($" Averidge {result.Averidge}");
-            Console.WriteLine($" Width {result.Width}");
+            Console.WriteLine($" Averidge {result.Averadge}");
+            Console.WriteLine($" Width {result.Width}");*/
             return result;
         }
 
