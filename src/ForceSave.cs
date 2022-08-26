@@ -6,10 +6,6 @@ namespace MouldingApp
     public class ForceSave : ForceBase
     {
         public ForceSave(string mould) : base(mould){}
-        
-        /*public ForceSave(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
-        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}*/
-
         public override event AddedDelegate Added;
 
         public override void AddDimension(double width, double hight)

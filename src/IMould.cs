@@ -1,5 +1,5 @@
 using static MouldingApp.EventMessages;
-//ctrl+k+d
+
 namespace MouldingApp
 {
     public interface IMould

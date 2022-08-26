@@ -6,8 +6,6 @@ namespace MouldingApp
     public class ForceMemory : ForceBase
     { 
         public ForceMemory(string mould) : base(mould){Added += OnAdded;}
-        /*public ForceMemory(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
-                        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {Added += OnAdded;}*/
         public override event AddedDelegate Added;
         public override void WidthSet(string width)
         {

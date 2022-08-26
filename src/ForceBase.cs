@@ -9,17 +9,6 @@ namespace MouldingApp
         {
            this.Mould = mould;
         }
-        /*public ForceBase(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure)
-        {
-           this.Mould = mould;
-           this.Width = width;
-           this.MeltLenth = meltLenth;
-           this.Thickness = thickness;
-           this.Shape = shape;
-           this.Diameter = diameter;
-           this.Material = material;
-           this.CavityPressure = cavityPressure;
-        }*/
         private double width;
         private double hight;
         private double meltLenth;
