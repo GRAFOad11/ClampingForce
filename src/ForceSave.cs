@@ -7,13 +7,11 @@ namespace MouldingApp
     {
         public ForceSave(string mould) : base(mould){}
         public override event AddedDelegate Added;
-
         public override void AddDimension(double width, double hight)
         {
             this.dimensions.Add(width);
             this.dimensions.Add(hight);
         }
-
         public override void CavityPressureSet(string cavityPressure)
         {
             if (int.TryParse(cavityPressure, out int result))
