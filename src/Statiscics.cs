@@ -1,8 +1,9 @@
+using System;
+
 namespace MouldingApp
 {
     public class Statiscics
     {
-        //public double Averadge;
         public double High;
         public double Low;
         public double Width;
@@ -24,6 +25,15 @@ namespace MouldingApp
                 return Sum / Count;
             }
         }
-        
+        public void Add(string number)
+        {
+            Console.WriteLine($"{number}");
+            /*--------------------NOT USED-----------------------
+            Sum += number;
+            Count++;
+            Low = Math.Min(number, Low);
+            High = Math.Max(number, High);
+            */
+        }
     }
 }

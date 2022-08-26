@@ -1,0 +1,43 @@
+Casing
+ 
+Bryła Prostokątna
+Długość 22cm
+Szerokość 18cm
+Grubość ścianki 1mm
+Droga płynięcia 200mm
+Viscosity 1,7
+Stosunek drogi płynięcia do grubości detalu 200:1
+Ciśnienie z wykresu 438bar
+Ciśnienie w gnieżdzie 438bar
+Powierzchnia wtrysku 396,000cm2
+Min Siła Zwarcia 173 TON
+Optymalna Siła Zwarcia 191 TON
+
+Casing
+ 
+Bryła Okrągła
+Średnica 30cm
+Grubość ścianki 1mm
+Droga płynięcia 150mm
+Viscosity 1
+Stosunek drogi płynięcia do grubości detalu 150:1
+Ciśnienie z wykresu 347bar
+Ciśnienie w gnieżdzie 347bar
+Powierzchnia wtrysku 706,500cm2
+Min Siła Zwarcia 245 TON
+Optymalna Siła Zwarcia 294 TON
+
+Harald
+ 
+Bryła Okrągła
+Średnica 22cm
+Grubość ścianki 1,9mm
+Droga płynięcia 200mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 105:1
+Ciśnienie z wykresu 162bar
+Ciśnienie w gnieżdzie 307bar
+Powierzchnia wtrysku 379,940cm2
+Min Siła Zwarcia 117 TON
+Optymalna Siła Zwarcia 140 TON
+

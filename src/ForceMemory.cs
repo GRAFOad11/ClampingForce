@@ -1,12 +1,13 @@
 using System;
+using System.IO;
 
 namespace MouldingApp
 {
     public class ForceMemory : ForceBase
     { 
         public ForceMemory(string mould) : base(mould){Added += OnAdded;}
-        public ForceMemory(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
-                        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {Added += OnAdded;}
+        /*public ForceMemory(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
+                        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {Added += OnAdded;}*/
         public override event AddedDelegate Added;
         public override void WidthSet(string width)
         {
@@ -227,21 +228,16 @@ namespace MouldingApp
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();
-            /*result.Averadge = 0.0;
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-            result.Width = this.Width;
-            foreach (var dimension in this.dimensions)
+            using (var reader = File.OpenText($"ResultsOfCalculation/{fileName}.txt"))
             {
-                result.Low = Math.Min(dimension, result.Low);
-                result.High = Math.Max(dimension, result.High);
-                result.Averadge += dimension;
+                var line = reader.ReadLine();
+                while (line != null)
+                {
+                    //var number = double.Parse(line);
+                    result.Add(line);
+                    line = reader.ReadLine();
+                }
             }
-            result.Averadge /= dimensions.Count;
-            Console.WriteLine($" Low {result.Low}");
-            Console.WriteLine($" High {result.High}");
-            Console.WriteLine($" Averidge {result.Averadge}");
-            Console.WriteLine($" Width {result.Width}");*/
             return result;
         }
     }
