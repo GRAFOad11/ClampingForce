@@ -4,14 +4,10 @@ namespace MouldingApp
 {
     public class ForceMemory : ForceBase
     { 
-        public ForceMemory(string mould) : base(mould){}
+        public ForceMemory(string mould) : base(mould){Added += OnAdded;}
         public ForceMemory(string mould,double width, double meltLenth, double thickness, bool shape, double diameter, string material, double cavityPressure) 
-                        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {}
-        public delegate void AddedDelegate(object sender, EventArgs args, string diameter);
-        public event AddedDelegate Added;
-
-        
-        
+                        : base(mould, width, meltLenth,  thickness,  shape,  diameter,  material,  cavityPressure) {Added += OnAdded;}
+        public override event AddedDelegate Added;
         public override void WidthSet(string width)
         {
             if (double.TryParse(width, out double result))
@@ -166,7 +162,6 @@ namespace MouldingApp
             this.CavityPressure = pressure;
             CountForce();
         }
-
         public override void CountForce()
         { 
             double force;
@@ -221,7 +216,6 @@ namespace MouldingApp
         {
             this.pressure.Add(pressure);
         }
-    
         public override void PrintList()
         {
             foreach (string list in this.materialList)
@@ -230,7 +224,6 @@ namespace MouldingApp
             }
             Console.WriteLine();
         }
-       
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();

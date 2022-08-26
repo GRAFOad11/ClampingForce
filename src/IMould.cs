@@ -1,4 +1,4 @@
-using System;
+using static MouldingApp.EventMessages;
 //ctrl+k+d
 namespace MouldingApp
 {
@@ -19,7 +19,6 @@ namespace MouldingApp
         void AddDimension(double width, double hight);
         void PrintList();
         Statiscics GetStatiscics();
-
+        event AddedDelegate Added;
     }
-
 }

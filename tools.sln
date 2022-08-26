@@ -1,21 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouldingApp", "src\MouldingApp.csproj", "{AF705CDB-514A-42D9-B643-9707FE00D0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouldingApp", "src\MouldingApp.csproj", "{AF705CDB-514A-42D9-B643-9707FE00D0F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{276285C9-3293-49D7-8B4A-198F3B521C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moulding.Tests", "test\Moulding.Tests\Moulding.Tests.csproj", "{BC8FE1D9-443C-4515-9BA5-E29B8FCAFBE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moulding.Tests", "test\Moulding.Tests\Moulding.Tests.csproj", "{BC8FE1D9-443C-4515-9BA5-E29B8FCAFBE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AF705CDB-514A-42D9-B643-9707FE00D0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -27,7 +24,13 @@ Global
 		{BC8FE1D9-443C-4515-9BA5-E29B8FCAFBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC8FE1D9-443C-4515-9BA5-E29B8FCAFBE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BC8FE1D9-443C-4515-9BA5-E29B8FCAFBE7} = {276285C9-3293-49D7-8B4A-198F3B521C7A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDDD95E6-4D65-4A01-B06D-88D2D4242CA0}
 	EndGlobalSection
 EndGlobal

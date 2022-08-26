@@ -8,16 +8,7 @@ namespace MouldingApp
         {
             var force = new ForceMemory("Any");
             var forceSave = new ForceSave("Any");
-            force.Added += OnAdded;
-            UserInterface(force, forceSave);
-            
-            void OnAdded(object sender, EventArgs args, string diameter)
-            {
-                if (double.TryParse(diameter, out double result) && result < 3)
-                {
-                    Console.WriteLine($"Małe to kółeczko");
-                }
-            }
+            UserInterface(force, forceSave); 
         }
         private static void UserInterface(IMould force, IMould forceSave)
         {
@@ -59,7 +50,6 @@ namespace MouldingApp
                         input = Console.ReadLine();
                         force.HightSet(input);
                     }
-
                     Console.WriteLine($"Podaj grubość ścianki, max 2 (milimetry)");
                     input = Console.ReadLine();
                     force.ThicknessSet(input);
@@ -81,7 +71,6 @@ namespace MouldingApp
                         force.MaterialViscosity(input);
                     }
                     force.CountPressure();
-
                 }
                 catch (FormatException ex)
                 {
@@ -91,7 +80,7 @@ namespace MouldingApp
                 {
                     Console.WriteLine(ex.Message);
                 }
-                finally { }
+                finally {}
             }
         }
     }

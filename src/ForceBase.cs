@@ -2,8 +2,9 @@ using System.Collections.Generic;
 
 namespace MouldingApp
 {
-    public abstract class ForceBase : IMould
+    public abstract class ForceBase : EventMessages, IMould
     {
+        public abstract event AddedDelegate Added;
         public ForceBase(string mould)
         {
            this.Mould = mould;
