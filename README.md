@@ -13,4 +13,4 @@ Use Accurate Calculation Formula with two important factors in calculating clamp
 -	Viscosity characteristics of plastics used
 	
 Program will save calculations in text file, named "Wyniki Obliczeń.txt", also read history is available from console.
-User Interface works in a way question/answer.
+User Interface works in a way question/answer, available language “Polish" only.
