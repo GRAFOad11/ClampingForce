@@ -41,3 +41,17 @@
 26.08.2022 22:59:41   Min Siła Zwarcia 117 TON
 26.08.2022 22:59:41   Optymalna Siła Zwarcia 140 TON
 
+26.08.2022 23:37:58   casing
+ 
+26.08.2022 23:38:08   Bryła Okrągła
+26.08.2022 23:38:12   Średnica 22cm
+26.08.2022 23:38:16   Grubość ścianki 1mm
+26.08.2022 23:38:22   Droga płynięcia 50mm
+26.08.2022 23:38:28   Viscosity 1,35
+26.08.2022 23:38:28   Stosunek drogi płynięcia do grubości detalu 50:1
+26.08.2022 23:38:28   Ciśnienie z wykresu 181bar
+26.08.2022 23:38:28   Ciśnienie w gnieżdzie 181bar
+26.08.2022 23:38:28   Powierzchnia wtrysku 379,940cm2
+26.08.2022 23:38:28   Min Siła Zwarcia 69 TON
+26.08.2022 23:38:28   Optymalna Siła Zwarcia 82 TON
+

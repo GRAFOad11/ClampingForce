@@ -2,8 +2,7 @@
   "profiles": {
     "MouldingApp": {
       "commandName": "Project",
-      "commandLineArgs": "dotnet run",
-      "workingDirectory": "C:\\Users\\Administrator\\ClampingForce"
+      "workingDirectory": "C:\\Users\\Administrator\\ClampingForce\\src"
     }
   }
 }

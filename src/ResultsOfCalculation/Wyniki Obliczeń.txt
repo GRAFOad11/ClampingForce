@@ -41,3 +41,17 @@ Powierzchnia wtrysku 379,940cm2
 Min Siła Zwarcia 117 TON
 Optymalna Siła Zwarcia 140 TON
 
+casing
+ 
+Bryła Okrągła
+Średnica 22cm
+Grubość ścianki 1mm
+Droga płynięcia 50mm
+Viscosity 1,35
+Stosunek drogi płynięcia do grubości detalu 50:1
+Ciśnienie z wykresu 181bar
+Ciśnienie w gnieżdzie 181bar
+Powierzchnia wtrysku 379,940cm2
+Min Siła Zwarcia 69 TON
+Optymalna Siła Zwarcia 82 TON
+
