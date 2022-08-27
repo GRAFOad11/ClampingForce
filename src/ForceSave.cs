@@ -18,11 +18,11 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.CavityPressure = result;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Ciśnienie gniazda {cavityPressure}bar");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Ciśnienie gniazda {cavityPressure}bar");
                 }
@@ -56,32 +56,32 @@ namespace MouldingApp
                 Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm"); 
             }
             Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia wtrysku {area:N3}cm2");
             }    
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Min Siła Zwarcia {force:N0} TON");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Min Siła Zwarcia {force:N0} TON");
             }    
             Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
             Console.WriteLine();
             Console.WriteLine();
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
                 writer.WriteLine("");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {forceSafety:N0} TON");
                 writer.WriteLine("");
@@ -94,11 +94,11 @@ namespace MouldingApp
             double ratio = 0.0;
             ratio = this.MeltLenth / this.Thickness;
             Console.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
             }
@@ -121,21 +121,21 @@ namespace MouldingApp
                 break;
             }
             Console.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Ciśnienie z wykresu {pressure.ToString("N0")}bar");
             }    
             pressure = pressure * this.Thickness;
             Console.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
             }
-            using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
             }    
@@ -153,11 +153,11 @@ namespace MouldingApp
                 {
                     Added(this, new EventArgs(), diameter);
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Średnica {diameter}cm");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Średnica {diameter}cm");
                 }    
@@ -172,7 +172,7 @@ namespace MouldingApp
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();
-            using (var reader = File.OpenText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+            using (var reader = File.OpenText($"{fileNameAudit}.txt"))
             {
                 var line = reader.ReadLine();
                 while (line != null)
@@ -191,11 +191,11 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.Hight = result;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Szerokość {hight}cm");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Szerokość {hight}cm");
                 }
@@ -213,11 +213,11 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.MeltLenth = result;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Droga płynięcia {melt}mm");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Droga płynięcia {melt}mm");
                 }
@@ -248,11 +248,11 @@ namespace MouldingApp
             {
                 Console.WriteLine();
                 Console.WriteLine($"Przyjmuję viscosity o wartości {material}");
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Viscosity {material}");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Viscosity {material}");
                 }
@@ -291,12 +291,12 @@ namespace MouldingApp
             {
                 this.Mould = mould;
                 Console.WriteLine($"Nazwa formy {mould}");
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"{mould}");
                     writer.WriteLine(" ");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   {mould}");
                     writer.WriteLine(" ");
@@ -312,11 +312,11 @@ namespace MouldingApp
             {
                 this.Shape = true;
                 s = "Okrągła";
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Bryła {s}");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Bryła {s}");
                 }
@@ -324,11 +324,11 @@ namespace MouldingApp
             else
             {
                 this.Shape = false;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Bryła {s}");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Bryła {s}");
                 }
@@ -341,11 +341,11 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Thickness = result;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Grubość ścianki {thickness}mm");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Grubość ścianki {thickness}mm");
                 }
@@ -364,11 +364,11 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Width = result;
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileName}.txt"))
+                using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Długość {width}cm");
                 }
-                using (var writer = File.AppendText($"ResultsOfCalculation/{fileNameAudit}.txt"))
+                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
                 }

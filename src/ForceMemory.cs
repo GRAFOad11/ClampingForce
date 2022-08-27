@@ -226,7 +226,7 @@ namespace MouldingApp
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();
-            using (var reader = File.OpenText($"ResultsOfCalculation/{fileName}.txt"))
+            using (var reader = File.OpenText($"{fileName}.txt"))
             {
                 var line = reader.ReadLine();
                 while (line != null)
