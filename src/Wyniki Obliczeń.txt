@@ -1,2 +1,91 @@
 casing
  
+lems
+ 
+Bryła Prostokątna
+Długość 6cm
+Szerokość 2cm
+Grubość ścianki 1mm
+Droga płynięcia 6mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 6:1
+Ciśnienie z wykresu 181bar
+Ciśnienie w gnieżdzie 181bar
+Powierzchnia detalu 12,000cm2
+Powierzchnia wlewka 0cm2
+Powierzchnia wtrysku 0,000cm2
+Min Siła Zwarcia 0 TON
+Optymalna Siła Zwarcia 0 TON
+
+dddd
+ 
+Bryła Okrągła
+Średnica 20cm
+Grubość ścianki 2mm
+Droga płynięcia 100mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 50:1
+Ciśnienie z wykresu 82bar
+Ciśnienie w gnieżdzie 163bar
+Powierzchnia detalu 314,000cm2
+Powierzchnia wlewka 0cm2
+Powierzchnia wtrysku 0,000cm2
+Powierzchnia wtrysku 0 szt.
+Min Siła Zwarcia 0 TON
+Optymalna Siła Zwarcia 0 TON
+
+ffff
+ 
+Bryła Okrągła
+ffff
+ 
+Bryła Okrągła
+Średnica 4cm
+Grubość ścianki 1mm
+Droga płynięcia 10mm
+Viscosity 1,35
+Stosunek drogi płynięcia do grubości detalu 10:1
+Ciśnienie z wykresu 181bar
+Ciśnienie w gnieżdzie 181bar
+Powierzchnia detalu 12,560cm2
+Powierzchnia wlewka 2cm2
+Powierzchnia wtrysku 52,240cm2
+Powierzchnia wtrysku 4 szt.
+Min Siła Zwarcia 9 TON
+Optymalna Siła Zwarcia 10 TON
+
+Lid
+ 
+Bryła Okrągła
+Średnica 22cm
+Grubość ścianki 1,9mm
+Droga płynięcia 200mm
+Viscosity 1,9
+Stosunek drogi płynięcia do grubości detalu 105:1
+Ciśnienie z wykresu 162bar
+Ciśnienie w gnieżdzie 307bar
+Powierzchnia detalu 379,940cm2
+Powierzchnia wlewka 0cm2
+Powierzchnia wtrysku 379,940cm2
+Powierzchnia wtrysku 1 szt.
+Min Siła Zwarcia 117 TON
+Optymalna Siła Zwarcia 128 TON
+
+fghj
+ 
+Bryła Prostokątna
+Długość 1cm
+Szerokość 3cm
+Grubość ścianki 2mm
+Droga płynięcia 10mm
+Viscosity 1,35
+Stosunek drogi płynięcia do grubości detalu 5:1
+Ciśnienie z wykresu 82bar
+Ciśnienie w gnieżdzie 163bar
+Powierzchnia detalu 3,000cm2
+Powierzchnia wlewka 4cm2
+Powierzchnia wtrysku 16,000cm2
+Powierzchnia wtrysku 4 szt.
+Min Siła Zwarcia 3 TON
+Optymalna Siła Zwarcia 3 TON
+

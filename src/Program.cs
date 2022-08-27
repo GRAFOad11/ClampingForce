@@ -10,6 +10,9 @@ namespace MouldingApp
             var forceSave = new ForceSave("Any");
             UserInterface(force, forceSave); 
         }
+
+        
+
         private static void UserInterface(IMould force, IMould forceSave)
         {
             while (true)
@@ -50,6 +53,12 @@ namespace MouldingApp
                         input = Console.ReadLine();
                         force.HightSet(input);
                     }
+                    Console.WriteLine($"Podaj ilość gnazd w formie");
+                    input = Console.ReadLine();
+                    force.SetNumberOfCavites(double.Parse(input));
+                    Console.WriteLine($"Podaj pole powierzchni wlewka (cm2) jeżeli brak wpisz 0");
+                    input = Console.ReadLine();
+                    force.SetRunnerProjectedArea(double.Parse(input));
                     Console.WriteLine($"Podaj grubość ścianki, max 2 (milimetry)");
                     input = Console.ReadLine();
                     force.ThicknessSet(input);

@@ -170,20 +170,22 @@ namespace MouldingApp
             if (this.Shape == true)
             {
                 area = 3.14* this.Diameter * this.Diameter / 4;
-                force = area * this.CavityPressure /1000;
-                forceSafety = force * 1.2;
-                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");
+                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");  
             }
             else
             {
                 area = this.Width * this.Hight;
-                force = area * this.CavityPressure /1000;
-                forceSafety = force * 1.1;
                 Console.WriteLine($"Długość Detalu {this.Width.ToString()} cm");
-                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm"); 
+                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm");
             }
+            Console.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+            Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()} cm2");
+            Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+            area = area * this.NumberOfCavites + this.RunnerProjectedArea;
             Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
+            force = area * this.CavityPressure /1000;
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
+            forceSafety = force * 1.1;
             Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
             Console.WriteLine();
             Console.WriteLine();
@@ -237,6 +239,18 @@ namespace MouldingApp
                 }
             }
             return result;
+        }
+
+        public override double SetNumberOfCavites(double numberOfCavites)
+        {
+            this.NumberOfCavites = numberOfCavites;
+            return this.NumberOfCavites;
+        }
+
+        public override double SetRunnerProjectedArea(double runnerProjectedArea)
+        {
+            this.RunnerProjectedArea = runnerProjectedArea;
+            return this.RunnerProjectedArea;
         }
     }
 }

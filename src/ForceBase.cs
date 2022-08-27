@@ -17,6 +17,8 @@ namespace MouldingApp
         private double diameter;
         private string material;
         private double cavityPressure;
+        private double numberOfCavites;
+        private double runnerProjectedArea;
         public string Mould { get; set; }
         public double Width { get{return this.width;} set{this.width = value;}}
         public double Hight { get{return this.hight;} set{this.hight = value;}}
@@ -26,6 +28,8 @@ namespace MouldingApp
         public double Diameter { get{return this.diameter;} set{this.diameter = value;}}
         public string Material { get{return this.material;} set{ if(!string.IsNullOrEmpty(value)){this.material = value;}}}
         public double CavityPressure { get{return this.cavityPressure;} set{this.cavityPressure = value;}}
+        public double NumberOfCavites { get{return this.numberOfCavites;} set{this.numberOfCavites = value;}}
+        public double RunnerProjectedArea { get{return this.runnerProjectedArea;} set{this.runnerProjectedArea = value;}}
         public const string fileName = "Wyniki Obliczeń";
         public const string fileNameAudit = "audit";
         public string[] materialList = new string[] {"GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66", "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP", "CP",
@@ -46,5 +50,8 @@ namespace MouldingApp
         public abstract void SetMouldID(string mould);
         public abstract void AddDimension(double width, double hight);
         public abstract void PrintList();
+        public abstract double SetNumberOfCavites(double numberOfCavites);
+        public abstract double SetRunnerProjectedArea(double runnerProjectedArea);
+        
     }
 }

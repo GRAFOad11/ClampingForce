@@ -1,2 +1,91 @@
 27.08.2022 08:40:33   casing
  
+27.08.2022 10:21:29   lems
+ 
+27.08.2022 10:21:38   Bryła Prostokątna
+27.08.2022 10:21:42   Długość 6cm
+27.08.2022 10:21:45   Szerokość 2cm
+27.08.2022 10:22:10   Grubość ścianki 1mm
+27.08.2022 10:22:16   Droga płynięcia 6mm
+27.08.2022 10:22:21   Viscosity 1,9
+27.08.2022 10:22:21   Stosunek drogi płynięcia do grubości detalu 6:1
+27.08.2022 10:22:21   Ciśnienie z wykresu 181bar
+27.08.2022 10:22:21   Ciśnienie w gnieżdzie 181bar
+27.08.2022 10:22:21   Powierzchnia detalu 12,000cm2
+27.08.2022 10:22:21   Powierzchnia wlewka 0cm2
+27.08.2022 10:22:21   Powierzchnia wtrysku 0,000cm2
+27.08.2022 10:22:21   Min Siła Zwarcia 0 TON
+27.08.2022 10:22:21   Optymalna Siła Zwarcia 0 TON
+
+27.08.2022 10:29:39   dddd
+ 
+27.08.2022 10:29:45   Bryła Okrągła
+27.08.2022 10:29:51   Średnica 20cm
+27.08.2022 10:30:07   Grubość ścianki 2mm
+27.08.2022 10:30:15   Droga płynięcia 100mm
+27.08.2022 10:30:19   Viscosity 1,9
+27.08.2022 10:30:19   Stosunek drogi płynięcia do grubości detalu 50:1
+27.08.2022 10:30:19   Ciśnienie z wykresu 82bar
+27.08.2022 10:30:19   Ciśnienie w gnieżdzie 163bar
+27.08.2022 10:30:19   Powierzchnia detalu 314,000cm2
+27.08.2022 10:30:19   Powierzchnia wlewka 0cm2
+27.08.2022 10:30:19   Powierzchnia wtrysku 0,000cm2
+27.08.2022 10:30:19   Powierzchnia wtrysku 0 szt.
+27.08.2022 10:30:20   Min Siła Zwarcia 0 TON
+27.08.2022 10:30:20   Optymalna Siła Zwarcia 0 TON
+
+27.08.2022 10:37:03   ffff
+ 
+27.08.2022 10:37:06   Bryła Okrągła
+27.08.2022 10:37:52   ffff
+ 
+27.08.2022 10:37:59   Bryła Okrągła
+27.08.2022 10:38:02   Średnica 4cm
+27.08.2022 10:38:21   Grubość ścianki 1mm
+27.08.2022 10:38:27   Droga płynięcia 10mm
+27.08.2022 10:38:36   Viscosity 1,35
+27.08.2022 10:38:36   Stosunek drogi płynięcia do grubości detalu 10:1
+27.08.2022 10:38:36   Ciśnienie z wykresu 181bar
+27.08.2022 10:38:36   Ciśnienie w gnieżdzie 181bar
+27.08.2022 10:38:36   Powierzchnia detalu 12,560cm2
+27.08.2022 10:38:36   Powierzchnia wlewka 2cm2
+27.08.2022 10:38:36   Powierzchnia wtrysku 52,240cm2
+27.08.2022 10:38:36   Powierzchnia wtrysku 4 szt.
+27.08.2022 10:38:36   Min Siła Zwarcia 9 TON
+27.08.2022 10:38:36   Optymalna Siła Zwarcia 10 TON
+
+27.08.2022 10:42:18   Lid
+ 
+27.08.2022 10:42:22   Bryła Okrągła
+27.08.2022 10:42:29   Średnica 22cm
+27.08.2022 10:42:43   Grubość ścianki 1,9mm
+27.08.2022 10:42:48   Droga płynięcia 200mm
+27.08.2022 10:42:54   Viscosity 1,9
+27.08.2022 10:42:54   Stosunek drogi płynięcia do grubości detalu 105:1
+27.08.2022 10:42:54   Ciśnienie z wykresu 162bar
+27.08.2022 10:42:54   Ciśnienie w gnieżdzie 307bar
+27.08.2022 10:42:54   Powierzchnia detalu 379,940cm2
+27.08.2022 10:42:54   Powierzchnia wlewka 0cm2
+27.08.2022 10:42:54   Powierzchnia wtrysku 379,940cm2
+27.08.2022 10:42:54   Powierzchnia wtrysku 1 szt.
+27.08.2022 10:42:54   Min Siła Zwarcia 117 TON
+27.08.2022 10:42:54   Optymalna Siła Zwarcia 128 TON
+
+27.08.2022 10:46:08   fghj
+ 
+27.08.2022 10:46:24   Bryła Prostokątna
+27.08.2022 10:46:32   Długość 1cm
+27.08.2022 10:46:45   Szerokość 3cm
+27.08.2022 10:46:59   Grubość ścianki 2mm
+27.08.2022 10:47:14   Droga płynięcia 10mm
+27.08.2022 10:47:25   Viscosity 1,35
+27.08.2022 10:47:25   Stosunek drogi płynięcia do grubości detalu 5:1
+27.08.2022 10:47:25   Ciśnienie z wykresu 82bar
+27.08.2022 10:47:25   Ciśnienie w gnieżdzie 163bar
+27.08.2022 10:47:25   Powierzchnia detalu 3,000cm2
+27.08.2022 10:47:25   Powierzchnia wlewka 4cm2
+27.08.2022 10:47:25   Powierzchnia wtrysku 16,000cm2
+27.08.2022 10:47:25   Powierzchnia wtrysku 4 szt.
+27.08.2022 10:47:25   Min Siła Zwarcia 3 TON
+27.08.2022 10:47:25   Optymalna Siła Zwarcia 3 TON
+

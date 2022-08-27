@@ -18,6 +18,8 @@ namespace MouldingApp
         void SetMouldID(string mould);
         void AddDimension(double width, double hight);
         void PrintList();
+        double SetNumberOfCavites(double numberOfCavites);
+        double SetRunnerProjectedArea(double runnerProjectedArea);
         Statiscics GetStatiscics();
         event AddedDelegate Added;
     }

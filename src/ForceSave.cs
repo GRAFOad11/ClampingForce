@@ -43,18 +43,33 @@ namespace MouldingApp
             if (this.Shape == true)
             {
                 area = 3.14* this.Diameter * this.Diameter / 4;
-                force = area * this.CavityPressure /1000;
-                forceSafety = force * 1.2;
-                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");
+                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");  
             }
             else
             {
                 area = this.Width * this.Hight;
-                force = area * this.CavityPressure /1000;
-                forceSafety = force * 1.1;
                 Console.WriteLine($"Długość Detalu {this.Width.ToString()} cm");
-                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm"); 
+                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm");
             }
+            Console.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+            using (var writer = File.AppendText($"{fileName}.txt"))
+            {
+                writer.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+            }
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Powierzchnia detalu {area:N3}cm2");
+            }
+            Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
+            using (var writer = File.AppendText($"{fileName}.txt"))
+            {
+                writer.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
+            }
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
+            }
+            area = area * this.NumberOfCavites + this.RunnerProjectedArea;
             Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
@@ -63,7 +78,17 @@ namespace MouldingApp
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia wtrysku {area:N3}cm2");
-            }    
+            } 
+            Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+            using (var writer = File.AppendText($"{fileName}.txt"))
+            {
+                writer.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+            }
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+            }
+            force = area * this.CavityPressure /1000;
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
@@ -72,10 +97,9 @@ namespace MouldingApp
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Min Siła Zwarcia {force:N0} TON");
-            }    
+            }
+            forceSafety = force * 1.1;
             Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
-            Console.WriteLine();
-            Console.WriteLine();
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
@@ -85,7 +109,9 @@ namespace MouldingApp
             {
                 writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {forceSafety:N0} TON");
                 writer.WriteLine("");
-            }    
+            } 
+            Console.WriteLine();
+            Console.WriteLine();  
         }
 
         public override void CountPressure()
@@ -177,7 +203,6 @@ namespace MouldingApp
                 var line = reader.ReadLine();
                 while (line != null)
                 {
-                    //var number = double.Parse(line);
                     result.Add(line);
                     line = reader.ReadLine();
                 }
@@ -275,6 +300,12 @@ namespace MouldingApp
             Console.WriteLine();
         }
 
+        public override double SetRunnerProjectedArea(double runnerProjectedArea)
+        {
+            this.RunnerProjectedArea = runnerProjectedArea;
+            return this.RunnerProjectedArea;
+        }
+
         public override void SetMouldID(string mould)
         {
             bool noDigit = true;
@@ -302,6 +333,12 @@ namespace MouldingApp
                     writer.WriteLine(" ");
                 }
             }
+        }
+
+        public override double SetNumberOfCavites(double numberOfCavites)
+        {  
+            this.NumberOfCavites = numberOfCavites;
+            return this.NumberOfCavites;
         }
 
         public override void ShapeSet(string shape)
