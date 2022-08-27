@@ -12,5 +12,5 @@ Use Accurate Calculation Formula with two important factors in calculating clamp
 -	Wall thickness of product
 -	Viscosity characteristics of plastics used
 	
-Program will save calculations in text file, located in folder ResultsOfCalculation, also read history is available from console.
+Program will save calculations in text file, named "Wyniki Obliczeń.txt", also read history is available from console.
 User Interface works in a way question/answer.
