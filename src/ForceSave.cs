@@ -18,20 +18,24 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.CavityPressure = result;
+
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Ciśnienie gniazda {cavityPressure}bar");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Ciśnienie gniazda {cavityPressure}bar");
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {cavityPressure}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(cavityPressure)}");
             }
+
         }
 
         public override void CountForce()
@@ -45,73 +49,93 @@ namespace MouldingApp
                 area = 3.14* this.Diameter * this.Diameter / 4;
                 Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");  
             }
+
             else
             {
                 area = this.Width * this.Hight;
                 Console.WriteLine($"Długość Detalu {this.Width.ToString()} cm");
                 Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm");
             }
+
             Console.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Powierzchnia detalu {area:N3}cm2");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia detalu {area:N3}cm2");
             }
+
             Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
             }
+
             area = area * this.NumberOfCavites + this.RunnerProjectedArea;
+
             Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia wtrysku {area:N3}cm2");
             } 
+
             Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
             }
+
             force = area * this.CavityPressure /1000;
+
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Min Siła Zwarcia {force:N0} TON");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Min Siła Zwarcia {force:N0} TON");
             }
+
             forceSafety = force * 1.1;
+
             Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
                 writer.WriteLine("");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {forceSafety:N0} TON");
-                writer.WriteLine("");
+                writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {forceSafety:N0} TON\n\n");
             } 
-            Console.WriteLine();
-            Console.WriteLine();  
+  
         }
 
         public override void CountPressure()
@@ -119,11 +143,14 @@ namespace MouldingApp
             double pressure = 0.0;
             double ratio = 0.0;
             ratio = this.MeltLenth / this.Thickness;
+
             Console.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
@@ -147,24 +174,31 @@ namespace MouldingApp
                 break;
             }
             Console.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Ciśnienie z wykresu {pressure.ToString("N0")}bar");
-            }    
+            } 
+
             pressure = pressure * this.Thickness;
+
             Console.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
+
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
                 writer.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
             }
+
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
                 writer.WriteLine($"{DateTime.Now}   Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
-            }    
+            }  
+
             this.CavityPressure = pressure;
             CountForce();
         }
@@ -175,29 +209,36 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Diameter = result;
+
                 if (Added != null)
                 {
                     Added(this, new EventArgs(), diameter);
                 }
+
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Średnica {diameter}cm");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Średnica {diameter}cm");
-                }    
+                }  
+
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {diameter}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(diameter)}");
             }
+
         }
 
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();
+
             using (var reader = File.OpenText($"{fileNameAudit}.txt"))
             {
                 var line = reader.ReadLine();
@@ -225,11 +266,13 @@ namespace MouldingApp
                     writer.WriteLine($"{DateTime.Now}   Szerokość {hight}cm");
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {hight}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(hight)}");
             }
+
         }
 
         public override void LongestMeltSet(string melt)
@@ -247,41 +290,42 @@ namespace MouldingApp
                     writer.WriteLine($"{DateTime.Now}   Droga płynięcia {melt}mm");
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd! nieprawidłowa liczba {melt}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(melt)}");
             }
+
         }
 
         public override string MaterialViscosity(string material)
         {
             switch(material.ToUpper()) 
             {
-                case "GPPS": material = "1"; break; case "HIPS": material = "1"; break; case "TPS": material = "1"; break; case "PE": material = "1"; break; case "PP": material = "1"; break;
-                case "PA6": material = "1,35"; break; case "PA66": material = "1,35"; break; case "PA11": material = "1,35"; break; case "PA12": material = "1,35"; break; 
-                case "PBT": material  = "1,35"; break; case "PETP": material = "1,35"; break;
-                case "CA": material = "1,45";break; case "CAB": material = "1,45"; break; case "CAP": material = "1,45"; break; case "CP": material = "1,45"; break; 
-                case "EVA": material = "1,45"; break; case "PEEL": material = "1,45"; break; case "PUR": material = "1,45"; break; case "TPU": material = "1,45"; break; case "PPVC": material = "1,45"; break; 
-                case "ABS": material = "1,55"; break; case "AAS/ASA": material = "1,55"; break; case "SAN": material = "1,55"; break; case "": material = "1,55"; break; 
-                case "MBS": material = "1,55"; break; case "PPS": material = "1,55"; break; case "PPO": material = "1,55"; break; case "BDS": material = "1,55"; break; case "POM": material = "1,55"; break; 
-                case "PMMA": material = "1,7"; break; case "PC/ABS": material = "1,7"; break; case "PC/PBT": material = "1,7"; break; 
-                case "PC": material = "1,9"; break; case "PES": material = "1,9"; break; case "PSU": material = "1,9"; break; case "PEI": material = "1,9"; break; case "PEEK": material = "1,9"; break; 
-                case "UPVC": material = "1,9"; break;
+                case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
+                case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
+                case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break; 
+                case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
+                case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
+                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
             }
+
             if (double.TryParse(material, out double result))
             {
-                Console.WriteLine();
-                Console.WriteLine($"Przyjmuję viscosity o wartości {material}");
+                Console.WriteLine($"\nPrzyjmuję viscosity o wartości {material}");
+
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Viscosity {material}");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Viscosity {material}");
                 }
             }
+
             else
             {
                 Console.WriteLine($"Błąd brak materiału na liście {material}");
@@ -295,9 +339,9 @@ namespace MouldingApp
         {
             foreach (string list in this.materialList)
             {
-                Console.WriteLine(list);
+                Console.WriteLine($"{list}\n");
             }
-            Console.WriteLine();
+
         }
 
         public override double SetRunnerProjectedArea(double runnerProjectedArea)
@@ -309,6 +353,7 @@ namespace MouldingApp
         public override void SetMouldID(string mould)
         {
             bool noDigit = true;
+
             foreach (char n in mould)
             {   
                 if (char.IsDigit(n))
@@ -318,15 +363,18 @@ namespace MouldingApp
                     break;
                 } 
             }
+
             if (noDigit)
             {
                 this.Mould = mould;
                 Console.WriteLine($"Nazwa formy {mould}");
+
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"{mould}");
                     writer.WriteLine(" ");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   {mould}");
@@ -353,11 +401,13 @@ namespace MouldingApp
                 {
                     writer.WriteLine($"Bryła {s}");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Bryła {s}");
                 }
             }
+
             else
             {
                 this.Shape = false;
@@ -365,10 +415,12 @@ namespace MouldingApp
                 {
                     writer.WriteLine($"Bryła {s}");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Bryła {s}");
                 }
+
             }
         }
 
@@ -382,11 +434,13 @@ namespace MouldingApp
                 {
                     writer.WriteLine($"Grubość ścianki {thickness}mm");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Grubość ścianki {thickness}mm");
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd! liczba poza zakresem {thickness}");
@@ -405,11 +459,13 @@ namespace MouldingApp
                 {
                     writer.WriteLine($"Długość {width}cm");
                 }
+
                 using (var writer = File.AppendText($"{fileNameAudit}.txt"))
                 {
                     writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {width}");

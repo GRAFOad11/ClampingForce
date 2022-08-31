@@ -17,21 +17,58 @@ namespace MouldingApp
             "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"
         };
         public abstract event AddedDelegate Added;
+        
         public ForceBase(string mould)
         {
            this.Mould = mould;
         }
 
         public string Mould { get; set; }
-        public double Width { get; set; }
-        public double Hight { get; set; }
-        public double MeltLenth { get; set; }
-        public double Thickness { get; set; }
-        public bool Shape { get; set; }
-        public double Diameter { get; set; }
-        public double CavityPressure { get; set; }
-        public double NumberOfCavites { get; set; }
-        public double RunnerProjectedArea { get; set; }
+        public double Width 
+        { 
+            get { return this.width; } 
+            set { this.width = value; }
+        }
+        public double Hight 
+        { 
+            get { return this.hight; } 
+            set { this.hight = value; }
+        }
+        public double MeltLenth 
+        { 
+            get { return this.meltLenth; } 
+            set { this.meltLenth = value; }
+        }
+        public double Thickness 
+        { 
+            get { return this.thickness; } 
+            set { this.thickness = value; }
+        }
+        public bool Shape 
+        { 
+            get { return this.shape; } 
+            set { this.shape = value; }
+        }
+        public double Diameter 
+        { 
+            get { return this.diameter; } 
+            set { this.diameter = value; }
+        }
+        public double CavityPressure 
+        { 
+            get { return this.cavityPressure; } 
+            set { this.cavityPressure = value; }
+        }
+        public double NumberOfCavites 
+        { 
+            get { return this.numberOfCavites; } 
+            set { this.numberOfCavites = value; }
+        }
+        public double RunnerProjectedArea 
+        { 
+            get { return this.runnerProjectedArea; } 
+            set { this.runnerProjectedArea = value; }
+        }
         public string Material 
         { 
             get {return this.material;} 

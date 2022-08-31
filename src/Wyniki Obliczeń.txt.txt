@@ -1,0 +1,18 @@
+lens
+ 
+Bryła Prostokątna
+Długość 20cm
+Szerokość 20cm
+Grubość ścianki 1mm
+Droga płynięcia 100mm
+Viscosity 1,35
+Stosunek drogi płynięcia do grubości detalu 100:1
+Ciśnienie z wykresu 247bar
+Ciśnienie w gnieżdzie 247bar
+Powierzchnia detalu 400.000cm2
+Powierzchnia wlewka 4cm2
+Powierzchnia wtrysku 404.000cm2
+Ilość gniazd 1 szt.
+Min Siła Zwarcia 100 TON
+Optymalna Siła Zwarcia 110 TON
+

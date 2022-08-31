@@ -13,12 +13,14 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Width = result;
-            } 
+            }
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {width}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(width)}");
             }
+
         }
         public override void HightSet(string hight)
         {
@@ -27,11 +29,13 @@ namespace MouldingApp
                 Console.WriteLine($"OK mam to {result}");
                 this.Hight = result;
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {hight}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(hight)}");
             }
+
         }
         public override void LongestMeltSet(string melt)
         {
@@ -40,11 +44,13 @@ namespace MouldingApp
                 Console.WriteLine($"OK {result}");
                 this.MeltLenth = result;
             } 
+
             else
             {
                 Console.WriteLine($"Błąd! nieprawidłowa liczba {melt}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(melt)}");
             }
+
         }
         public override void ThicknessSet(string thickness)
         {
@@ -52,13 +58,15 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK {result}");
                 this.Thickness = result;
-            } 
+            }
+
             else
             {
                 Console.WriteLine($"Błąd! liczba poza zakresem {thickness}");
                 Console.WriteLine("lub");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(thickness)}");
             }
+
         }
         public override void ShapeSet(string shape)
         {
@@ -66,10 +74,12 @@ namespace MouldingApp
             {
                 this.Shape = true;
             }
+
             else
             {
                 this.Shape = false;
             }
+
         }
         public override void DiameterSet(string diameter)
         {
@@ -82,11 +92,13 @@ namespace MouldingApp
                     Added(this, new EventArgs(), diameter);
                 }
             } 
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {diameter}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(diameter)}");
             }
+
         }
         public override void CavityPressureSet(string cavityPressure)
         {
@@ -94,33 +106,30 @@ namespace MouldingApp
             {
                 Console.WriteLine($"OK mam to {result}");
                 this.CavityPressure = result;
-            } 
+            }
+
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {cavityPressure}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(cavityPressure)}");
             }
+
         }
         public override string MaterialViscosity(string material)
         {
           
             switch(material.ToUpper()) 
             {
-                case "GPPS": material = "1"; break; case "HIPS": material = "1"; break; case "TPS": material = "1"; break; case "PE": material = "1"; break; case "PP": material = "1"; break;
-                case "PA6": material = "1,35"; break; case "PA66": material = "1,35"; break; case "PA11": material = "1,35"; break; case "PA12": material = "1,35"; break; 
-                case "PBT": material  = "1,35"; break; case "PETP": material = "1,35"; break;
-                case "CA": material = "1,45";break; case "CAB": material = "1,45"; break; case "CAP": material = "1,45"; break; case "CP": material = "1,45"; break; 
-                case "EVA": material = "1,45"; break; case "PEEL": material = "1,45"; break; case "PUR": material = "1,45"; break; case "TPU": material = "1,45"; break; case "PPVC": material = "1,45"; break; 
-                case "ABS": material = "1,55"; break; case "AAS/ASA": material = "1,55"; break; case "SAN": material = "1,55"; break; case "": material = "1,55"; break; 
-                case "MBS": material = "1,55"; break; case "PPS": material = "1,55"; break; case "PPO": material = "1,55"; break; case "BDS": material = "1,55"; break; case "POM": material = "1,55"; break; 
-                case "PMMA": material = "1,7"; break; case "PC/ABS": material = "1,7"; break; case "PC/PBT": material = "1,7"; break; 
-                case "PC": material = "1,9"; break; case "PES": material = "1,9"; break; case "PSU": material = "1,9"; break; case "PEI": material = "1,9"; break; case "PEEK": material = "1,9"; break; 
-                case "UPVC": material = "1,9"; break;
+                case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
+                case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
+                case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break; 
+                case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
+                case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
+                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
             }
             if (double.TryParse(material, out double result))
             {
-                Console.WriteLine();
-                Console.WriteLine($"Przyjmuję viscosity o wartości {material}");
+                Console.WriteLine($"\n Przyjmuję viscosity o wartości {material}");
             }
             else
             {
@@ -186,9 +195,8 @@ namespace MouldingApp
             force = area * this.CavityPressure /1000;
             Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
             forceSafety = force * 1.1;
-            Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON\n\n");
+
         }
         public override void SetMouldID(string mould)
         {
@@ -221,7 +229,7 @@ namespace MouldingApp
         {
             foreach (string list in this.materialList)
             {
-                Console.WriteLine(list);
+                Console.WriteLine($"list\n");
             }
             Console.WriteLine();
         }
