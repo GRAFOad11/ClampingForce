@@ -4,10 +4,44 @@ namespace MouldingApp
 {
     public abstract class ForceBase : EventMessages, IMould
     {
+        public List<double> dimensions = new List<double>();
+        public List<int> pressure = new List<int>();
+        public const string fileName = "Wyniki Obliczeń.txt";
+        public const string fileNameAudit = "audit.txt";
+        public string[] materialList = new string[] 
+        {
+            "GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66",
+            "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP",
+            "CP","EVA", "PEEL", "PUR/TPU", "PPVC", "ABS", "AAS/ASA",
+            "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS",
+            "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"
+        };
         public abstract event AddedDelegate Added;
         public ForceBase(string mould)
         {
            this.Mould = mould;
+        }
+
+        public string Mould { get; set; }
+        public double Width { get; set; }
+        public double Hight { get; set; }
+        public double MeltLenth { get; set; }
+        public double Thickness { get; set; }
+        public bool Shape { get; set; }
+        public double Diameter { get; set; }
+        public double CavityPressure { get; set; }
+        public double NumberOfCavites { get; set; }
+        public double RunnerProjectedArea { get; set; }
+        public string Material 
+        { 
+            get {return this.material;} 
+            set
+            { 
+                if(!string.IsNullOrEmpty(value))
+                {
+                    this.material = value;
+                }
+            }
         }
         private double width;
         private double hight;
@@ -19,25 +53,8 @@ namespace MouldingApp
         private double cavityPressure;
         private double numberOfCavites;
         private double runnerProjectedArea;
-        public string Mould { get; set; }
-        public double Width { get{return this.width;} set{this.width = value;}}
-        public double Hight { get{return this.hight;} set{this.hight = value;}}
-        public double MeltLenth { get{return this.meltLenth;} set{this.meltLenth = value;}}
-        public double Thickness { get{return this.thickness;} set{this.thickness = value;}}
-        public bool Shape { get{return this.shape;} set{this.shape = value;}}
-        public double Diameter { get{return this.diameter;} set{this.diameter = value;}}
-        public string Material { get{return this.material;} set{ if(!string.IsNullOrEmpty(value)){this.material = value;}}}
-        public double CavityPressure { get{return this.cavityPressure;} set{this.cavityPressure = value;}}
-        public double NumberOfCavites { get{return this.numberOfCavites;} set{this.numberOfCavites = value;}}
-        public double RunnerProjectedArea { get{return this.runnerProjectedArea;} set{this.runnerProjectedArea = value;}}
-        public const string fileName = "Wyniki Obliczeń";
-        public const string fileNameAudit = "audit";
-        public string[] materialList = new string[] {"GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66", "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP", "CP",
-        "EVA", "PEEL", "PUR/TPU", "PPVC", "ABS", "AAS/ASA", "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS", "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"};
-        public List<double> dimensions = new List<double>();
-        public List<int> pressure = new List<int>();
+
         public abstract void WidthSet(string width);
-        public abstract Statiscics GetStatiscics();
         public abstract void HightSet(string hight);
         public abstract void LongestMeltSet(string melt);
         public abstract void ThicknessSet(string thickness);
@@ -52,6 +69,6 @@ namespace MouldingApp
         public abstract void PrintList();
         public abstract double SetNumberOfCavites(double numberOfCavites);
         public abstract double SetRunnerProjectedArea(double runnerProjectedArea);
-        
+        public abstract Statiscics GetStatiscics();
     }
 }

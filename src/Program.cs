@@ -11,8 +11,6 @@ namespace MouldingApp
             UserInterface(force, forceSave); 
         }
 
-        
-
         private static void UserInterface(IMould force, IMould forceSave)
         {
             while (true)
@@ -22,14 +20,17 @@ namespace MouldingApp
                 Console.WriteLine();
                 Console.WriteLine("Czy chcesz aby program zapisał wynik do pliku tekstowego? tak(Y) nie(N)");
                 var input = Console.ReadLine();
+
                 if (input == "Y" || input == "y")
                 {
                     force = forceSave;
                 }
+
                 else if (input == "q")
                 {
                     break;
                 }
+
                 try
                 {
                     Console.WriteLine("Podaj nazwę formy");
@@ -67,6 +68,7 @@ namespace MouldingApp
                     force.LongestMeltSet(input);
                     Console.WriteLine("Wprowadz nazwę tworzywa (np PA6, aby wyświetlić pełną listę wpisz (L))");
                     input = Console.ReadLine();
+
                     if (input == "L" || input == "l")
                     {
                         Console.WriteLine();
@@ -75,23 +77,27 @@ namespace MouldingApp
                         input = Console.ReadLine();
                         force.MaterialViscosity(input);
                     }
+
                     else
                     {
                         force.MaterialViscosity(input);
                     }
                     force.CountPressure();
                 }
+
                 catch (FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-                finally {}
+                
                 Console.WriteLine("Czy otworzyć chcesz całą historię obliczeń? tak(Y) nie(N)");
                 input = Console.ReadLine();
+
                 if (input == "Y" || input == "y")
                 {
                     forceSave.GetStatiscics();
