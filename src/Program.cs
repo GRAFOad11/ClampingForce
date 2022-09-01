@@ -98,10 +98,10 @@ namespace MouldingApp
                     Console.WriteLine(ex.Message);
                 }
 
-                Console.WriteLine("Czy otworzyć chcesz całą historię obliczeń? tak(Y) nie(N)");
+                Console.WriteLine("Chcesz otworzyć całą historię obliczeń? tak(Y) nie(N)");
                 input = Console.ReadLine();
 
-                if (input == "Y" || input == "y")
+                if (input == "Y" || input == "y" || input == "T"  || input == "t")
                 {
                     forceSave.GetStatiscics();
                 }
