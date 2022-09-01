@@ -5,71 +5,21 @@ namespace MouldingApp
 {
     public class ForceSave : ForceBase
     {
-        public ForceSave(string mould) : base(mould){}
-        public override event AddedDelegate Added;
-        public override void AddDimension(double width, double hight)
-        {
-            this.dimensions.Add(width);
-            this.dimensions.Add(hight);
-        }
-        public override void CavityPressureSet(string cavityPressure)
-        {
-            if (int.TryParse(cavityPressure, out int result))
-            {
-                Console.WriteLine($"OK mam to {result}");
-                this.CavityPressure = result;
-
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Ciśnienie gniazda {cavityPressure}bar");
-                }
-
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Ciśnienie gniazda {cavityPressure}bar");
-                }
-            } 
-
-            else
-            {
-                Console.WriteLine($"Błąd źle wpisałeś tą liczbę {cavityPressure}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(cavityPressure)}");
-            }
-
-        }
+        public ForceSave(string mould) : base(mould) { }
 
         public override void CountForce()
         {
-            double force;
-            double forceSafety;
-            double area;
-
-            if (this.Shape == true)
-            {
-                area = 3.14* this.Diameter * this.Diameter / 4;
-                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");  
-            }
-
-            else
-            {
-                area = this.Width * this.Hight;
-                Console.WriteLine($"Długość Detalu {this.Width.ToString()} cm");
-                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm");
-            }
-
-            Console.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+            base.CountForce();
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Powierzchnia detalu {area:N3}cm2");
+                writer.WriteLine($"Powierzchnia detalu {this.Area:N3}cm2");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Powierzchnia detalu {area:N3}cm2");
+                writer.WriteLine($"{DateTime.Now}   Powierzchnia detalu {this.Area:N3}cm2");
             }
-
-            Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
@@ -81,21 +31,15 @@ namespace MouldingApp
                 writer.WriteLine($"{DateTime.Now}   Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
             }
 
-            area = area * this.NumberOfCavites + this.RunnerProjectedArea;
-
-            Console.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
-
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Powierzchnia wtrysku {area:N3}cm2");
+                writer.WriteLine($"Powierzchnia wtrysku {this.AreaAll:N3}cm2");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Powierzchnia wtrysku {area:N3}cm2");
-            } 
-
-            Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+                writer.WriteLine($"{DateTime.Now}   Powierzchnia wtrysku {this.AreaAll:N3}cm2");
+            }
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
@@ -107,295 +51,144 @@ namespace MouldingApp
                 writer.WriteLine($"{DateTime.Now}   Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
             }
 
-            force = area * this.CavityPressure /1000;
-
-            Console.WriteLine($"Min Siła Zwarcia {force:N0} TON");
-
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Min Siła Zwarcia {force:N0} TON");
+                writer.WriteLine($"Min Siła Zwarcia {this.Force:N0} TON");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Min Siła Zwarcia {force:N0} TON");
+                writer.WriteLine($"{DateTime.Now}   Min Siła Zwarcia {this.Force:N0} TON");
             }
-
-            forceSafety = force * 1.1;
-
-            Console.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Optymalna Siła Zwarcia {forceSafety:N0} TON");
-                writer.WriteLine("");
+                writer.WriteLine($"Optymalna Siła Zwarcia {this.ForceSafety:N0} TON\n\n");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {forceSafety:N0} TON\n\n");
-            } 
-  
+                writer.WriteLine($"{DateTime.Now}   Optymalna Siła Zwarcia {this.ForceSafety:N0} TON\n\n");
+            }
         }
 
         public override void CountPressure()
         {
-            double pressure = 0.0;
-            double ratio = 0.0;
-            ratio = this.MeltLenth / this.Thickness;
-
-            Console.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
+            base.CountPressure(); 
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
+                writer.WriteLine($"Stosunek drogi płynięcia do grubości detalu {this.Ratio.ToString("N0")}:1");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Stosunek drogi płynięcia do grubości detalu {ratio.ToString("N0")}:1");
+                writer.WriteLine($"{DateTime.Now}   Stosunek drogi płynięcia do grubości detalu {this.Ratio.ToString("N0")}:1");
             }
-    
-            switch(ratio) 
-            {
-                case var r when r <= 75 : pressure = -6.6219 * Math.Pow(this.Thickness, 3) + 95.524 * Math.Pow(this.Thickness, 2) - 339.2 * this.Thickness + 430.84; 
-                break;
-                case var r when r > 75 && r <= 125 : pressure = -34.873 * Math.Pow(this.Thickness, 3) + 223.77 * Math.Pow(this.Thickness, 2) - 516.54 * this.Thickness + 574.47; 
-                break;
-                case var r when r > 125 && r <= 175 : pressure = -57.62 * Math.Pow(this.Thickness, 3) + 334.49 * Math.Pow(this.Thickness, 2) - 762.92 * this.Thickness + 832.9;
-                break;
-                case var r when r > 175 && r <= 225 : pressure = -82.774 * Math.Pow(this.Thickness, 3) + 453.82 * Math.Pow(this.Thickness, 2) - 982.75 * this.Thickness + 1049.7;
-                break;
-                case var r when r > 225 && r <= 262 : pressure = -186.17 * Math.Pow(this.Thickness, 3) + 914.62 * Math.Pow(this.Thickness, 2) - 1695.3 * this.Thickness + 1509.2;
-                break;
-                case var r when r > 262 && r <= 287 : pressure = -297.97 * Math.Pow(this.Thickness, 3) + 1487.4 * Math.Pow(this.Thickness, 2) - 2690.5 * this.Thickness + 2165.4;
-                break;
-                case var r when r > 287 : pressure = -760.81 * Math.Pow(this.Thickness, 3) + 3815.7 * Math.Pow(this.Thickness, 2) - 6593.9 * this.Thickness + 4429.1;
-                break;
-            }
-            Console.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Ciśnienie z wykresu {pressure.ToString("N0")}bar");
+                writer.WriteLine($"Ciśnienie z wykresu {this.Pressure.ToString("N0")}bar");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Ciśnienie z wykresu {pressure.ToString("N0")}bar");
-            } 
-
-            pressure = pressure * this.Thickness;
-
-            Console.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
+                writer.WriteLine($"{DateTime.Now}   Ciśnienie z wykresu {this.Pressure.ToString("N0")}bar");
+            }
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
+                writer.WriteLine($"Ciśnienie w gnieżdzie {this.CavityPressure.ToString("N0")}bar");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   Ciśnienie w gnieżdzie {pressure.ToString("N0")}bar");
-            }  
-
-            this.CavityPressure = pressure;
-            CountForce();
+                writer.WriteLine($"{DateTime.Now}   Ciśnienie w gnieżdzie {this.CavityPressure.ToString("N0")}bar");
+            }
         }
 
         public override void DiameterSet(string diameter)
         {
-            if (double.TryParse(diameter, out double result))
+            base.DiameterSet(diameter);
+
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                Console.WriteLine($"OK {result}");
-                this.Diameter = result;
-
-                if (Added != null)
-                {
-                    Added(this, new EventArgs(), diameter);
-                }
-
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Średnica {diameter}cm");
-                }
-
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Średnica {diameter}cm");
-                }  
-
-            } 
-
-            else
-            {
-                Console.WriteLine($"Błąd źle wpisałeś tą liczbę {diameter}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(diameter)}");
+                writer.WriteLine($"Średnica {diameter}cm");
             }
 
-        }
-
-        public override Statiscics GetStatiscics()
-        {
-            var result = new Statiscics();
-
-            using (var reader = File.OpenText($"{fileNameAudit}.txt"))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                var line = reader.ReadLine();
-                while (line != null)
-                {
-                    result.Add(line);
-                    line = reader.ReadLine();
-                }
+                writer.WriteLine($"{DateTime.Now}   Średnica {diameter}cm");
             }
-            return result;
         }
 
         public override void HightSet(string hight)
         {
-            if (double.TryParse(hight, out double result))
-            {
-                Console.WriteLine($"OK mam to {result}");
-                this.Hight = result;
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Szerokość {hight}cm");
-                }
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Szerokość {hight}cm");
-                }
-            } 
+            base.HightSet(hight);
 
-            else
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                Console.WriteLine($"Błąd źle wpisałeś tą liczbę {hight}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(hight)}");
+                writer.WriteLine($"Szerokość {hight}cm");
             }
 
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Szerokość {hight}cm");
+            }
         }
 
         public override void LongestMeltSet(string melt)
         {
-            if (double.TryParse(melt, out double result))
-            {
-                Console.WriteLine($"OK {result}");
-                this.MeltLenth = result;
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Droga płynięcia {melt}mm");
-                }
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Droga płynięcia {melt}mm");
-                }
-            } 
+            base.LongestMeltSet(melt);
 
-            else
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                Console.WriteLine($"Błąd! nieprawidłowa liczba {melt}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(melt)}");
+                writer.WriteLine($"Droga płynięcia {melt}mm");
             }
 
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Droga płynięcia {melt}mm");
+            }
         }
 
         public override string MaterialViscosity(string material)
         {
-            switch(material.ToUpper()) 
+            base.MaterialViscosity(material);
+
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
-                case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
-                case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break; 
-                case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
-                case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
-                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
+                writer.WriteLine($"Viscosity {this.Material}");
             }
 
-            if (double.TryParse(material, out double result))
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                Console.WriteLine($"\nPrzyjmuję viscosity o wartości {material}");
-
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Viscosity {material}");
-                }
-
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Viscosity {material}");
-                }
+                writer.WriteLine($"{DateTime.Now}   Viscosity {this.Material}");
             }
-
-            else
-            {
-                Console.WriteLine($"Błąd brak materiału na liście {material}");
-                Console.WriteLine("lub");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(material)}");
-            }
-            return this.Material;
+            return base.MaterialViscosity(material);
         }
-
-        public override void PrintList()
-        {
-            foreach (string list in this.materialList)
-            {
-                Console.WriteLine($"{list}\n");
-            }
-
-        }
-
-        public override double SetRunnerProjectedArea(double runnerProjectedArea)
-        {
-            this.RunnerProjectedArea = runnerProjectedArea;
-            return this.RunnerProjectedArea;
-        }
-
         public override void SetMouldID(string mould)
         {
-            bool noDigit = true;
+            base.SetMouldID(mould);
 
-            foreach (char n in mould)
-            {   
-                if (char.IsDigit(n))
-                {
-                    Console.WriteLine($"Nowa nazwa formy zawiera cyfrę({n}) Nazwa nie została zapisana!!!");
-                    noDigit = false;
-                    break;
-                } 
-            }
-
-            if (noDigit)
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                this.Mould = mould;
-                Console.WriteLine($"Nazwa formy {mould}");
-
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"{mould}");
-                    writer.WriteLine(" ");
-                }
-
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   {mould}");
-                    writer.WriteLine(" ");
-                }
+                writer.WriteLine($"{this.Mould }\n");
             }
-        }
 
-        public override double SetNumberOfCavites(double numberOfCavites)
-        {  
-            this.NumberOfCavites = numberOfCavites;
-            return this.NumberOfCavites;
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   {this.Mould }\n");
+            }
         }
 
         public override void ShapeSet(string shape)
         {
+            base.ShapeSet(shape);
             string s = "Prostokątna";
 
-            if(shape == "Y" || shape == "y")
+            if (this.Shape == true)
             {
-                this.Shape = true;
                 s = "Okrągła";
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
@@ -410,7 +203,6 @@ namespace MouldingApp
 
             else
             {
-                this.Shape = false;
                 using (var writer = File.AppendText($"{fileName}.txt"))
                 {
                     writer.WriteLine($"Bryła {s}");
@@ -420,56 +212,36 @@ namespace MouldingApp
                 {
                     writer.WriteLine($"{DateTime.Now}   Bryła {s}");
                 }
-
             }
         }
 
         public override void ThicknessSet(string thickness)
         {
-            if (double.TryParse(thickness, out double result) && result > 0 && result <= 2)
-            {
-                Console.WriteLine($"OK {result}");
-                this.Thickness = result;
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Grubość ścianki {thickness}mm");
-                }
+            base.ThicknessSet(thickness);
 
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Grubość ścianki {thickness}mm");
-                }
-            } 
-
-            else
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                Console.WriteLine($"Błąd! liczba poza zakresem {thickness}");
-                Console.WriteLine("lub");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(thickness)}");
+                writer.WriteLine($"Grubość ścianki {thickness}mm");
+            }
+
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Grubość ścianki {thickness}mm");
             }
         }
 
         public override void WidthSet(string width)
         {
-            if (double.TryParse(width, out double result))
-            {
-                Console.WriteLine($"OK {result}");
-                this.Width = result;
-                using (var writer = File.AppendText($"{fileName}.txt"))
-                {
-                    writer.WriteLine($"Długość {width}cm");
-                }
+            base.WidthSet(width);
 
-                using (var writer = File.AppendText($"{fileNameAudit}.txt"))
-                {
-                    writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
-                }
-            } 
-
-            else
+            using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                Console.WriteLine($"Błąd źle wpisałeś tą liczbę {width}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(width)}");
+                writer.WriteLine($"Długość {width}cm");
+            }
+
+            using (var writer = File.AppendText($"{fileNameAudit}.txt"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
             }
         }
     }

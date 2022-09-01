@@ -36,11 +36,11 @@ namespace Moulding.Tests
             Assert.Same(mould1, mould1);
             Assert.NotSame(mould1, mould2);
             Assert.False(Object.ReferenceEquals(mould1, mould2));
-            Assert.False(ForceMemory.Equals(mould1, mould2));
+            Assert.False(ForceBase.Equals(mould1, mould2));
         }
-        private ForceMemory GetMouldId(string mould)
+        private ForceBase GetMouldId(string mould)
         {
-            return new ForceMemory(mould);
+            return new ForceBase(mould);
         }
     }
 }
