@@ -6,8 +6,6 @@ namespace MouldingApp
 {
     public class ForceBase : EventMessages, IMould
     {
-        public List<double> dimensions = new List<double>();
-        public List<int> pressure = new List<int>();
         public const string fileName = "Wyniki Obliczeń";
         public const string fileNameAudit = "audit";
         public virtual event AddedDelegate Added;
@@ -16,7 +14,7 @@ namespace MouldingApp
             this.Mould = mould;
             Added += OnAdded;
         }
-        
+
         public string Mould { get; set; }
         public double Width { get; set; }
         public double Hight { get; set; }
@@ -102,10 +100,10 @@ namespace MouldingApp
                 case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
                 case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
                 case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
-                
+
             }
             this.Material = material;
-            return this.Material; 
+            return this.Material;
         }
 
         public virtual void CountPressure()
@@ -175,7 +173,7 @@ namespace MouldingApp
                 Console.WriteLine($"Nazwa formy {mould}");
             }
         }
-        
+
         public virtual void PrintList()
         {
             string[] materialList = new string[]

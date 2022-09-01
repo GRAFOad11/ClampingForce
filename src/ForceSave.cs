@@ -74,7 +74,7 @@ namespace MouldingApp
 
         public override void CountPressure()
         {
-            base.CountPressure(); 
+            base.CountPressure();
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
@@ -173,12 +173,12 @@ namespace MouldingApp
 
             using (var writer = File.AppendText($"{fileName}.txt"))
             {
-                writer.WriteLine($"{this.Mould }\n");
+                writer.WriteLine($"{this.Mould}\n");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}.txt"))
             {
-                writer.WriteLine($"{DateTime.Now}   {this.Mould }\n");
+                writer.WriteLine($"{DateTime.Now}   {this.Mould}\n");
             }
         }
 
