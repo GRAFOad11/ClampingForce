@@ -134,7 +134,6 @@ namespace MouldingApp
                     break;
             }
             this.CavityPressure = this.Pressure * this.Thickness;
-            CountForce();
         }
 
         public virtual void CountForce()

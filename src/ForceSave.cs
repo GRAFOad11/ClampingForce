@@ -105,6 +105,7 @@ namespace MouldingApp
             {
                 writer.WriteLine($"{DateTime.Now}   Ciśnienie w gnieżdzie {this.CavityPressure.ToString("N0")}bar");
             }
+            CountForce();
         }
 
         public override void DiameterSet(string diameter)
@@ -243,6 +244,20 @@ namespace MouldingApp
             {
                 writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
             }
+        }
+        public override Statiscics GetStatiscics()
+        {
+            var result = new Statiscics();
+            using (var reader = File.OpenText($"{fileName}.txt"))
+            {
+                var line = reader.ReadLine();
+                while (line != null)
+                {
+                    result.Add(line);
+                    line = reader.ReadLine();
+                }
+            }
+            return result;
         }
     }
 }

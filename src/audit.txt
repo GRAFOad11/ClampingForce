@@ -1,125 +1,18 @@
-01-Sep-22 17:33:06   ass
- 
-01-Sep-22 17:34:08   Bryła Okrągła
-01-Sep-22 17:34:14   Średnica 4cm
-01-Sep-22 17:35:24   Grubość ścianki 1mm
-01-Sep-22 17:35:36   Droga płynięcia 100mm
-01-Sep-22 17:35:44   Viscosity pc
-01-Sep-22 17:35:44   Stosunek drogi płynięcia do grubości detalu NaN:1
-01-Sep-22 17:35:44   Ciśnienie z wykresu 0bar
-01-Sep-22 17:35:44   Ciśnienie w gnieżdzie 0bar
-01-Sep-22 17:54:34   dd
- 
-01-Sep-22 17:54:37   Bryła Okrągła
-01-Sep-22 17:54:44   Średnica 5cm
-01-Sep-22 17:55:13   Grubość ścianki 1mm
-01-Sep-22 17:55:16   Droga płynięcia 10mm
-01-Sep-22 17:55:19   Viscosity pc
-01-Sep-22 17:55:19   Stosunek drogi płynięcia do grubości detalu NaN:1
-01-Sep-22 17:55:19   Ciśnienie z wykresu 0bar
-01-Sep-22 17:55:19   Ciśnienie w gnieżdzie 0bar
-01-Sep-22 18:16:18   fc
- 
-01-Sep-22 18:16:32   Bryła Prostokątna
-01-Sep-22 18:16:46   Długość 22cm
-01-Sep-22 18:16:54   Szerokość 10cm
-01-Sep-22 18:17:06   Grubość ścianki 1mm
-01-Sep-22 18:17:11   Droga płynięcia 100mm
-01-Sep-22 18:17:17   Viscosity pc
-01-Sep-22 18:27:49   dupa
- 
-01-Sep-22 18:27:56   Bryła Okrągła
-01-Sep-22 18:28:01   Średnica 123cm
-01-Sep-22 18:28:38   Grubość ścianki 1mm
-01-Sep-22 18:28:44   Droga płynięcia 10mm
-01-Sep-22 18:28:49   Viscosity pc
-01-Sep-22 18:34:50   src
- 
-01-Sep-22 18:34:55   Bryła Okrągła
-01-Sep-22 18:35:00   Średnica 456cm
-01-Sep-22 18:35:09   Grubość ścianki 2mm
-01-Sep-22 18:35:38   Droga płynięcia 10mm
-01-Sep-22 18:35:44   Viscosity pc
-01-Sep-22 18:53:50   ggg
+02.09.2022 09:31:35   cos tam
 
-01-Sep-22 18:53:59   Bryła Okrągła
-01-Sep-22 18:54:08   Średnica 3cm
-01-Sep-22 18:55:19   fff
-
-01-Sep-22 18:55:26   Bryła Okrągła
-01-Sep-22 18:55:36   Średnica 5cm
-01-Sep-22 18:56:04   Grubość ścianki 1mm
-01-Sep-22 18:56:12   Droga płynięcia 10mm
-01-Sep-22 18:56:17   Viscosity 
-01-Sep-22 18:59:25   hhh
-
-01-Sep-22 18:59:33   Bryła Okrągła
-01-Sep-22 18:59:36   Średnica 8cm
-01-Sep-22 18:59:45   Grubość ścianki 1mm
-01-Sep-22 18:59:50   Droga płynięcia 4mm
-01-Sep-22 18:59:54   Viscosity 
-01-Sep-22 19:36:53   abcd
-
-01-Sep-22 19:37:00   Bryła Okrągła
-01-Sep-22 19:37:06   Średnica 5cm
-01-Sep-22 19:37:22   Grubość ścianki 1mm
-01-Sep-22 19:37:28   Droga płynięcia 10mm
-01-Sep-22 19:37:31   Viscosity 
-01-Sep-22 19:37:31   Stosunek drogi płynięcia do grubości detalu 10:1
-01-Sep-22 19:37:31   Ciśnienie z wykresu 181bar
-01-Sep-22 19:37:31   Ciśnienie w gnieżdzie 181bar
-01-Sep-22 19:47:59   jkl
-
-01-Sep-22 19:48:04   Bryła Okrągła
-01-Sep-22 19:48:09   Średnica 9cm
-01-Sep-22 19:48:25   Grubość ścianki 2mm
-01-Sep-22 19:48:30   Droga płynięcia 200mm
-01-Sep-22 19:48:36   Viscosity pc
-01-Sep-22 19:48:36   Stosunek drogi płynięcia do grubości detalu 100:1
-01-Sep-22 19:48:36   Ciśnienie z wykresu 157bar
-01-Sep-22 19:48:36   Ciśnienie w gnieżdzie 315bar
-01-Sep-22 20:06:06   adrian
-
-01-Sep-22 20:06:11   Bryła Prostokątna
-01-Sep-22 20:06:33   Długość 22cm
-01-Sep-22 20:06:36   Szerokość 10cm
-01-Sep-22 20:06:46   Grubość ścianki 1mm
-01-Sep-22 20:06:50   Droga płynięcia 100mm
-01-Sep-22 20:06:54   Viscosity 
-01-Sep-22 20:06:54   Powierzchnia detalu 220.000cm2
-01-Sep-22 20:06:54   Powierzchnia wlewka 0cm2
-01-Sep-22 20:06:54   Powierzchnia wtrysku 220.000cm2
-01-Sep-22 20:06:54   Ilość gniazd 1 szt.
-01-Sep-22 20:06:54   Min Siła Zwarcia 54 TON
-01-Sep-22 20:06:54   Optymalna Siła Zwarcia 60 TON
+02.09.2022 09:31:39   Bryła Okrągła
+02.09.2022 09:31:44   Średnica 22cm
+02.09.2022 09:32:03   Grubość ścianki 1,9mm
+02.09.2022 09:32:12   Droga płynięcia 200mm
+02.09.2022 09:32:17   Viscosity 1,9
+02.09.2022 09:32:17   Stosunek drogi płynięcia do grubości detalu 105:1
+02.09.2022 09:32:17   Ciśnienie z wykresu 162bar
+02.09.2022 09:32:17   Ciśnienie w gnieżdzie 307bar
+02.09.2022 09:32:17   Powierzchnia detalu 379,940cm2
+02.09.2022 09:32:17   Powierzchnia wlewka 0cm2
+02.09.2022 09:32:17   Powierzchnia wtrysku 379,940cm2
+02.09.2022 09:32:17   Ilość gniazd 1 szt.
+02.09.2022 09:32:17   Min Siła Zwarcia 117 TON
+02.09.2022 09:32:17   Optymalna Siła Zwarcia 128 TON
 
 
-01-Sep-22 20:06:54   Stosunek drogi płynięcia do grubości detalu 100:1
-01-Sep-22 20:06:54   Ciśnienie z wykresu 247bar
-01-Sep-22 20:06:54   Ciśnienie w gnieżdzie 247bar
-01-Sep-22 20:10:12   rrrrr
-
-01-Sep-22 20:10:18   Bryła Okrągła
-01-Sep-22 20:10:24   Średnica 20cm
-01-Sep-22 20:10:58   ffff
-
-01-Sep-22 20:11:02   Bryła Okrągła
-01-Sep-22 20:11:05   Średnica 22cm
-01-Sep-22 20:17:13   kk
-
-01-Sep-22 20:17:18   Bryła Okrągła
-01-Sep-22 20:17:27   Średnica 41,1cm
-01-Sep-22 20:18:17   Grubość ścianki 1.7mm
-01-Sep-22 20:18:54   Droga płynięcia 100mm
-01-Sep-22 20:18:57   Viscosity 1,9
-01-Sep-22 20:18:57   Powierzchnia detalu 132,602.985cm2
-01-Sep-22 20:18:57   Powierzchnia wlewka 44.4cm2
-01-Sep-22 20:18:57   Powierzchnia wtrysku 132,647.385cm2
-01-Sep-22 20:18:57   Ilość gniazd 1 szt.
-01-Sep-22 20:18:57   Min Siła Zwarcia 22,031 TON
-01-Sep-22 20:18:57   Optymalna Siła Zwarcia 24,234 TON
-
-
-01-Sep-22 20:18:57   Stosunek drogi płynięcia do grubości detalu 59:1
-01-Sep-22 20:18:57   Ciśnienie z wykresu 98bar
-01-Sep-22 20:18:57   Ciśnienie w gnieżdzie 166bar

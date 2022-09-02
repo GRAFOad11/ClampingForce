@@ -23,12 +23,17 @@ namespace MouldingApp
 
                 if (input == "Y" || input == "y")
                 {
-                    force = forceSave;
+                    force = new ForceSave("Any");
                 }
 
                 else if (input == "q")
                 {
                     break;
+                }
+
+                else
+                {
+                    force = new ForceMemory("Any");
                 }
 
                 try
@@ -49,10 +54,10 @@ namespace MouldingApp
 
                     else
                     {
-                        Console.WriteLine($"Podaj długość detalu (centymetry)");
+                        Console.WriteLine($"Podaj długość detalu np. 3,5 (centymetry)");
                         input = Console.ReadLine();
                         force.WidthSet(input);
-                        Console.WriteLine($"Podaj szerokość detalu (centymetry)");
+                        Console.WriteLine($"Podaj szerokość detalu np. 3,5 (centymetry)");
                         input = Console.ReadLine();
                         force.HightSet(input);
                     }
@@ -60,10 +65,10 @@ namespace MouldingApp
                     Console.WriteLine($"Podaj ilość gnazd w formie");
                     input = Console.ReadLine();
                     force.SetNumberOfCavites(double.Parse(input));
-                    Console.WriteLine($"Podaj pole powierzchni wlewka (cm2) jeżeli brak wpisz 0");
+                    Console.WriteLine($"Podaj pole powierzchni wlewka np. 3,5 (cm2) jeżeli brak wpisz 0");
                     input = Console.ReadLine();
                     force.SetRunnerProjectedArea(double.Parse(input));
-                    Console.WriteLine($"Podaj grubość ścianki, max 2 (milimetry)");
+                    Console.WriteLine($"Podaj grubość ścianki, max 2 np. 1,9 (milimetry)");
                     input = Console.ReadLine();
                     force.ThicknessSet(input);
                     Console.WriteLine($"Podaj najdłóższy odcinek płynięcia materiału (milimetry)");

@@ -1,125 +1,18 @@
-ass
- 
-Bryła Okrągła
-Średnica 4cm
-Grubość ścianki 1mm
-Droga płynięcia 100mm
-Viscosity pc
-Stosunek drogi płynięcia do grubości detalu NaN:1
-Ciśnienie z wykresu 0bar
-Ciśnienie w gnieżdzie 0bar
-dd
- 
-Bryła Okrągła
-Średnica 5cm
-Grubość ścianki 1mm
-Droga płynięcia 10mm
-Viscosity pc
-Stosunek drogi płynięcia do grubości detalu NaN:1
-Ciśnienie z wykresu 0bar
-Ciśnienie w gnieżdzie 0bar
-fc
- 
-Bryła Prostokątna
-Długość 22cm
-Szerokość 10cm
-Grubość ścianki 1mm
-Droga płynięcia 100mm
-Viscosity pc
-dupa
- 
-Bryła Okrągła
-Średnica 123cm
-Grubość ścianki 1mm
-Droga płynięcia 10mm
-Viscosity pc
-src
- 
-Bryła Okrągła
-Średnica 456cm
-Grubość ścianki 2mm
-Droga płynięcia 10mm
-Viscosity pc
-ggg
-
-Bryła Okrągła
-Średnica 3cm
-fff
-
-Bryła Okrągła
-Średnica 5cm
-Grubość ścianki 1mm
-Droga płynięcia 10mm
-Viscosity 
-hhh
-
-Bryła Okrągła
-Średnica 8cm
-Grubość ścianki 1mm
-Droga płynięcia 4mm
-Viscosity 
-abcd
-
-Bryła Okrągła
-Średnica 5cm
-Grubość ścianki 1mm
-Droga płynięcia 10mm
-Viscosity 
-Stosunek drogi płynięcia do grubości detalu 10:1
-Ciśnienie z wykresu 181bar
-Ciśnienie w gnieżdzie 181bar
-jkl
-
-Bryła Okrągła
-Średnica 9cm
-Grubość ścianki 2mm
-Droga płynięcia 200mm
-Viscosity pc
-Stosunek drogi płynięcia do grubości detalu 100:1
-Ciśnienie z wykresu 157bar
-Ciśnienie w gnieżdzie 315bar
-adrian
-
-Bryła Prostokątna
-Długość 22cm
-Szerokość 10cm
-Grubość ścianki 1mm
-Droga płynięcia 100mm
-Viscosity 
-Powierzchnia detalu 220.000cm2
-Powierzchnia wlewka 0cm2
-Powierzchnia wtrysku 220.000cm2
-Ilość gniazd 1 szt.
-Min Siła Zwarcia 54 TON
-Optymalna Siła Zwarcia 60 TON
-
-
-Stosunek drogi płynięcia do grubości detalu 100:1
-Ciśnienie z wykresu 247bar
-Ciśnienie w gnieżdzie 247bar
-rrrrr
-
-Bryła Okrągła
-Średnica 20cm
-ffff
+cos tam
 
 Bryła Okrągła
 Średnica 22cm
-kk
-
-Bryła Okrągła
-Średnica 41,1cm
-Grubość ścianki 1.7mm
-Droga płynięcia 100mm
+Grubość ścianki 1,9mm
+Droga płynięcia 200mm
 Viscosity 1,9
-Powierzchnia detalu 132,602.985cm2
-Powierzchnia wlewka 44.4cm2
-Powierzchnia wtrysku 132,647.385cm2
+Stosunek drogi płynięcia do grubości detalu 105:1
+Ciśnienie z wykresu 162bar
+Ciśnienie w gnieżdzie 307bar
+Powierzchnia detalu 379,940cm2
+Powierzchnia wlewka 0cm2
+Powierzchnia wtrysku 379,940cm2
 Ilość gniazd 1 szt.
-Min Siła Zwarcia 22,031 TON
-Optymalna Siła Zwarcia 24,234 TON
+Min Siła Zwarcia 117 TON
+Optymalna Siła Zwarcia 128 TON
 
 
-Stosunek drogi płynięcia do grubości detalu 59:1
-Ciśnienie z wykresu 98bar
-Ciśnienie w gnieżdzie 166bar

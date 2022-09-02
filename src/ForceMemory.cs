@@ -36,6 +36,7 @@ namespace MouldingApp
             Console.WriteLine($"Stosunek drogi płynięcia do grubości detalu {this.Ratio.ToString("N0")}:1");
             Console.WriteLine($"Ciśnienie z wykresu {this.Pressure.ToString("N0")}bar");
             Console.WriteLine($"Ciśnienie w gnieżdzie {this.CavityPressure.ToString("N0")}bar");
+            CountForce();
         }
 
         public override void DiameterSet(string diameter)
