@@ -97,8 +97,24 @@ namespace MouldingApp
                 case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
                 case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break;
                 case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
-                case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
-                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
+                case "PMMA" or "PC/ABS" or "PC/PBT": material = "2,6"; break;
+                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "5,2"; break;
+                // PP TPE   1
+                // PE-LD TPE-S   1,2
+                // PS TPE-O TPE-V   1,3
+                // PS-HI    1,4
+                // PA66    1,5
+                // PP-KS LCP   1,6
+                // PA6 PA6-GF PA66-GF PP-T   1,7
+                // PP-FSC  1,8
+                // PE-HD PPE-PA SAN  1,9
+                // PET-GF 2,0
+                // PMMA TPE-A  2,2
+                // ABS  2,3
+                // POM 2,5
+                // TPE-E 2,8
+                // PSU 2,9
+                
 
             }
             this.Material = material;
@@ -133,14 +149,14 @@ namespace MouldingApp
                     this.Pressure = -760.81 * Math.Pow(this.Thickness, 3) + 3815.7 * Math.Pow(this.Thickness, 2) - 6593.9 * this.Thickness + 4429.1;
                     break;
             }
-            this.CavityPressure = this.Pressure * this.Thickness;
+            this.CavityPressure = this.Pressure * double.Parse(this.Material);
         }
 
         public virtual void CountForce()
         {
             if (this.Shape == true)
             {
-                this.Area = 3.14 * this.Diameter * this.Diameter / 4;
+                this.Area = (3.14 * (this.Diameter * this.Diameter)) / 4;
             }
 
             else
@@ -148,8 +164,8 @@ namespace MouldingApp
                 this.Area = this.Width * this.Hight;
             }
 
-            this.AreaAll = this.Area * this.NumberOfCavites + this.RunnerProjectedArea;
-            this.Force = this.Area * this.CavityPressure / 1000;
+            this.AreaAll = (this.Area * this.NumberOfCavites) + this.RunnerProjectedArea;
+            this.Force = (this.AreaAll * this.CavityPressure) / 1000;
             this.ForceSafety = this.Force * 1.1;
         }
 
@@ -176,16 +192,15 @@ namespace MouldingApp
         {
             string[] materialList = new string[]
             {
-                "GPPS", "HIPS", "TPS", "PE", "PP", "PA6", "PA66",
-                "PA11", "PA12", "PBT", "PETP", "CA", "CAB", "CAP",
-                "CP","EVA", "PEEL", "PUR/TPU", "PPVC", "ABS", "AAS/ASA",
-                "SAN", "MBS", "PPS", "PPO", "BDS", "POM", "PMMA", "PC/ABS",
-                "PC/PBT", "PC", "PES", "PSU", "PEI", "PEEK", "UPVC"
+                "AAS/ASA", "ABS", "BDS", "CA", "CAB", "CAP", "CP", "EVA", "GPPS", "HIPS", 
+                "MBS", "PA11", "PA12", "PA6", "PA66", "PBT", "PC", "PC/ABS", "PC/PBT", 
+                "PE", "PEEK", "PEEL", "PEI", "PES", "PETP", "PMMA", "POM", "PP", "PPO", 
+                "PPS", "PPVC", "PSU", "PUR/TPU", "SAN", "TPS", "UPVC"
             };
 
             foreach (string list in materialList)
             {
-                Console.WriteLine($"list\n");
+                Console.WriteLine($"{list}");
             }
         }
 
