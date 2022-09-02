@@ -93,28 +93,39 @@ namespace MouldingApp
         {
             switch (material.ToUpper())
             {
-                case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
-                case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
-                case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break;
-                case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
-                case "PMMA" or "PC/ABS" or "PC/PBT": material = "2,6"; break;
-                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "5,2"; break;
-                // PP TPE   1
-                // PE-LD TPE-S   1,2
-                // PS TPE-O TPE-V   1,3
-                // PS-HI    1,4
-                // PA66    1,5
-                // PP-KS LCP   1,6
-                // PA6 PA6-GF PA66-GF PP-T   1,7
-                // PP-FSC  1,8
-                // PE-HD PPE-PA SAN  1,9
-                // PET-GF 2,0
-                // PMMA TPE-A  2,2
-                // ABS  2,3
-                // POM 2,5
-                // TPE-E 2,8
-                // PSU 2,9
-                
+                // Original list of material viscosity does not work werry well !!!!
+                //case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
+                //case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
+                //case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break;
+                //case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
+                //case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
+                //case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
+
+                case "PP" or "TPE": material = "1"; break;
+                case "PE-LD" or "TPE-S": material = "1,2"; break;
+                case "PS" or "TPE-O" or "TPE-V ": material = "1,3"; break;
+                case "PS-HI": material = "1,4"; break;
+                case "PA66": material = "1,5"; break;
+                case "PP-KS" or "LCP": material = "1,6"; break;
+                case "PA6" or "PA6-GF" or "PP-T": material = "1,7"; break;
+                case "PP-FSC": material = "1,8"; break;
+                case "PE-HD" or "PPE-PA" or "SAN": material = "1,9"; break;
+                case "PET-GF": material = "2"; break;
+                case "PMMA" or "TPE-A": material = "2,2"; break;
+                case "ABS": material = "2,3"; break;
+                case "POM": material = "2,5"; break;
+                case "PC/ABS": material = "2,6"; break;
+                case "TPE-E": material = "2,8"; break;
+                case "PSU": material = "2,9"; break;
+                case "PES": material = "3,2"; break;
+                case "PPS": material = "3,6"; break;
+                case "PBT-GF": material = "3,7"; break;
+                case "PC/PBT": material = "3,8"; break;
+                case "PBT": material = "3,9"; break;
+                case "PC-GF" or "TPE-U": material = "4"; break;
+                case "PEI": material = "4,4"; break;
+                case "PVC-U": material = "4,5"; break;
+                case "PC": material = "5,2"; break;
 
             }
             this.Material = material;
@@ -192,10 +203,15 @@ namespace MouldingApp
         {
             string[] materialList = new string[]
             {
-                "AAS/ASA", "ABS", "BDS", "CA", "CAB", "CAP", "CP", "EVA", "GPPS", "HIPS", 
-                "MBS", "PA11", "PA12", "PA6", "PA66", "PBT", "PC", "PC/ABS", "PC/PBT", 
-                "PE", "PEEK", "PEEL", "PEI", "PES", "PETP", "PMMA", "POM", "PP", "PPO", 
-                "PPS", "PPVC", "PSU", "PUR/TPU", "SAN", "TPS", "UPVC"
+                //"AAS/ASA", "ABS", "BDS", "CA", "CAB", "CAP", "CP", "EVA", "GPPS", "HIPS", 
+                //"MBS", "PA11", "PA12", "PA6", "PA66", "PBT", "PC", "PC/ABS", "PC/PBT", 
+                //"PE", "PEEK", "PEEL", "PEI", "PES", "PETP", "PMMA", "POM", "PP", "PPO", 
+                //"PPS", "PPVC", "PSU", "PUR/TPU", "SAN", "TPS", "UPVC"
+                "ABS", "LCP", "PA6", "PA66", "PA66-GF", "PA6-GF", "PBT", "PBT-GF", "PC",
+                "PC/ABS", "PC/PBT", "PC-GF", "PE-HD", "PEI", "PE-LD", "PES", "PET-GF", 
+                "PMMA", "POM", "PP", "PPE-PA", "PP-FSC", "PP-KS", "PPS", "PP-T", "PS", 
+                "PS-HI", "PSU", "PVC-U", "SAN", "TPE", "TPE-A", "TPE-E", "TPE-O", "TPE-S",
+                "TPE-U", "TPE-V"
             };
 
             foreach (string list in materialList)
