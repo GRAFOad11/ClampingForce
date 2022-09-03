@@ -5,8 +5,8 @@ namespace MouldingApp
 {
     public class ForceBase : EventMessages, IMould
     {
-        public const string fileName = "Wyniki Obliczeń";
-        public const string fileNameAudit = "audit";
+        public const string fileName = "Wyniki Obliczeń.txt";
+        public const string fileNameAudit = "audit.txt";
         public virtual event AddedDelegate Added;
         public ForceBase(string mould)
         {
@@ -94,12 +94,12 @@ namespace MouldingApp
             switch (material.ToUpper())
             {
                 // Original list of material viscosity does not work werry well !!!!
-                //case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
-                //case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
-                //case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break;
-                //case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
-                //case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
-                //case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;
+                /*case "GPPS" or "HIPS" or "TPS" or "PE" or "PP": material = "1"; break;
+                case "PA6" or "PA66" or "PA11" or "PA12" or "PBT" or "PETP": material = "1,35"; break;
+                case "CA" or "CAB" or "CAP" or "CP" or "EVA" or "PEEL" or "PUR" or "TPU" or "PPVC": material = "1,45"; break;
+                case "ABS" or "AAS/ASA" or "SAN" or "MBS" or "PPS" or "PPO" or "BDS" or "POM": material = "1,55"; break;
+                case "PMMA" or "PC/ABS" or "PC/PBT": material = "1,7"; break;
+                case "PC" or "PES" or "PSU" or "PEI" or "PEEK" or "UPVC": material = "1,9"; break;*/
 
                 case "PP" or "TPE": material = "1"; break;
                 case "PE-LD" or "TPE-S": material = "1,2"; break;
@@ -107,7 +107,7 @@ namespace MouldingApp
                 case "PS-HI": material = "1,4"; break;
                 case "PA66": material = "1,5"; break;
                 case "PP-KS" or "LCP": material = "1,6"; break;
-                case "PA6" or "PA6-GF" or "PP-T": material = "1,7"; break;
+                case "PA6" or "PA6-GF" or "PA66-GF" or "PP-T": material = "1,7"; break;
                 case "PP-FSC": material = "1,8"; break;
                 case "PE-HD" or "PPE-PA" or "SAN": material = "1,9"; break;
                 case "PET-GF": material = "2"; break;
@@ -203,10 +203,11 @@ namespace MouldingApp
         {
             string[] materialList = new string[]
             {
-                //"AAS/ASA", "ABS", "BDS", "CA", "CAB", "CAP", "CP", "EVA", "GPPS", "HIPS", 
-                //"MBS", "PA11", "PA12", "PA6", "PA66", "PBT", "PC", "PC/ABS", "PC/PBT", 
-                //"PE", "PEEK", "PEEL", "PEI", "PES", "PETP", "PMMA", "POM", "PP", "PPO", 
-                //"PPS", "PPVC", "PSU", "PUR/TPU", "SAN", "TPS", "UPVC"
+                /*"AAS/ASA", "ABS", "BDS", "CA", "CAB", "CAP", "CP", "EVA", "GPPS", "HIPS", 
+                "MBS", "PA11", "PA12", "PA6", "PA66", "PBT", "PC", "PC/ABS", "PC/PBT", 
+                "PE", "PEEK", "PEEL", "PEI", "PES", "PETP", "PMMA", "POM", "PP", "PPO", 
+                "PPS", "PPVC", "PSU", "PUR/TPU", "SAN", "TPS", "UPVC"
+                */
                 "ABS", "LCP", "PA6", "PA66", "PA66-GF", "PA6-GF", "PBT", "PBT-GF", "PC",
                 "PC/ABS", "PC/PBT", "PC-GF", "PE-HD", "PEI", "PE-LD", "PES", "PET-GF", 
                 "PMMA", "POM", "PP", "PPE-PA", "PP-FSC", "PP-KS", "PPS", "PP-T", "PS", 

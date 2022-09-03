@@ -16,3 +16,35 @@ Min Siła Zwarcia 117 TON
 Optymalna Siła Zwarcia 128 TON
 
 
+aa
+
+Bryła Okrągła
+Średnica 4,2cm
+Grubość ścianki 1,4mm
+Droga płynięcia 22mm
+Viscosity PA66-GF
+hh
+
+Bryła Okrągła
+Średnica 4,2cm
+Grubość ścianki 1,5mm
+Droga płynięcia 22mm
+Viscosity pa66-gf
+gg
+
+Bryła Okrągła
+Średnica 4,2cm
+Grubość ścianki 1,5mm
+Droga płynięcia 22mm
+Viscosity 1,7
+Stosunek drogi płynięcia do grubości detalu 15:1
+Ciśnienie z wykresu 115bar
+Ciśnienie w gnieżdzie 195bar
+Powierzchnia detalu 13,847cm2
+Powierzchnia wlewka 0cm2
+Powierzchnia wtrysku 55,390cm2
+Ilość gniazd 4 szt.
+Min Siła Zwarcia 11 TON
+Optymalna Siła Zwarcia 12 TON
+
+

@@ -16,3 +16,35 @@
 02.09.2022 09:32:17   Optymalna Siła Zwarcia 128 TON
 
 
+02.09.2022 17:09:19   aa
+
+02.09.2022 17:09:32   Bryła Okrągła
+02.09.2022 17:09:44   Średnica 4,2cm
+02.09.2022 17:10:04   Grubość ścianki 1,4mm
+02.09.2022 17:10:10   Droga płynięcia 22mm
+02.09.2022 17:10:38   Viscosity PA66-GF
+02.09.2022 17:15:34   hh
+
+02.09.2022 17:15:44   Bryła Okrągła
+02.09.2022 17:15:56   Średnica 4,2cm
+02.09.2022 17:16:08   Grubość ścianki 1,5mm
+02.09.2022 17:16:13   Droga płynięcia 22mm
+02.09.2022 17:16:32   Viscosity pa66-gf
+02.09.2022 17:17:07   gg
+
+02.09.2022 17:17:14   Bryła Okrągła
+02.09.2022 17:17:19   Średnica 4,2cm
+02.09.2022 17:17:41   Grubość ścianki 1,5mm
+02.09.2022 17:17:51   Droga płynięcia 22mm
+02.09.2022 17:18:01   Viscosity 1,7
+02.09.2022 17:18:01   Stosunek drogi płynięcia do grubości detalu 15:1
+02.09.2022 17:18:01   Ciśnienie z wykresu 115bar
+02.09.2022 17:18:01   Ciśnienie w gnieżdzie 195bar
+02.09.2022 17:18:01   Powierzchnia detalu 13,847cm2
+02.09.2022 17:18:01   Powierzchnia wlewka 0cm2
+02.09.2022 17:18:01   Powierzchnia wtrysku 55,390cm2
+02.09.2022 17:18:01   Ilość gniazd 4 szt.
+02.09.2022 17:18:01   Min Siła Zwarcia 11 TON
+02.09.2022 17:18:01   Optymalna Siła Zwarcia 12 TON
+
+
