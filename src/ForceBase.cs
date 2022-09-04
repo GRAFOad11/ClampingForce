@@ -36,7 +36,7 @@ namespace MouldingApp
         {
             if (double.TryParse(width, out double result))
             {
-                this.Width = result;
+                this.Width = result / 10;
             }
         }
 
@@ -44,7 +44,7 @@ namespace MouldingApp
         {
             if (double.TryParse(hight, out double result))
             {
-                this.Hight = result;
+                this.Hight = result / 10;
             }
         }
 
@@ -66,7 +66,7 @@ namespace MouldingApp
 
         public virtual void ShapeSet(string shape)
         {
-            if (shape == "Y" || shape == "y")
+            if (shape == "Y" || shape == "y" || shape == "T" || shape == "t" || shape == "tak" || shape == "TAK")
             {
                 this.Shape = true;
             }
@@ -81,7 +81,7 @@ namespace MouldingApp
         {
             if (double.TryParse(diameter, out double result))
             {
-                this.Diameter = result;
+                this.Diameter = result / 10;
                 if (Added != null)
                 {
                     Added(this, new EventArgs(), diameter);
@@ -195,7 +195,7 @@ namespace MouldingApp
             if (noDigit)
             {
                 this.Mould = mould;
-                Console.WriteLine($"Nazwa formy {mould}");
+                Console.WriteLine($"Nazwa formy {mould}\n");
             }
         }
 
@@ -221,15 +221,28 @@ namespace MouldingApp
             }
         }
 
-        public virtual double SetNumberOfCavites(double numberOfCavites)
+        public virtual void SetNumberOfCavites(string numberOfCavites)
         {
-            this.NumberOfCavites = numberOfCavites;
-            return this.NumberOfCavites;
+            if (double.TryParse(numberOfCavites, out double result))
+            {
+                this.NumberOfCavites = result;
+                if (Added != null)
+                {
+                    Added(this, new EventArgs(), numberOfCavites);
+                }
+            }
         }
-        public virtual double SetRunnerProjectedArea(double runnerProjectedArea)
+
+        public virtual void SetRunnerProjectedArea(string runnerProjectedArea)
         {
-            this.RunnerProjectedArea = runnerProjectedArea;
-            return this.RunnerProjectedArea;
+            if (double.TryParse(runnerProjectedArea, out double result))
+            {
+                this.RunnerProjectedArea = result;
+                if (Added != null)
+                {
+                    Added(this, new EventArgs(), runnerProjectedArea);
+                }
+            }
         }
 
         public virtual Statiscics GetStatiscics()

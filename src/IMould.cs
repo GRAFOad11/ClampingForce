@@ -16,8 +16,8 @@ namespace MouldingApp
         void CountForce();
         void SetMouldID(string mould);
         void PrintList();
-        double SetNumberOfCavites(double numberOfCavites);
-        double SetRunnerProjectedArea(double runnerProjectedArea);
+        void SetNumberOfCavites(string numberOfCavites);
+        void SetRunnerProjectedArea(string runnerProjectedArea);
         Statiscics GetStatiscics();
         event AddedDelegate Added;
     }

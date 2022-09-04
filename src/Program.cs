@@ -15,18 +15,20 @@ namespace MouldingApp
         {
             while (true)
             {
-                Console.WriteLine();
-                Console.WriteLine("Witam w programie do obliczania siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c");
-                Console.WriteLine();
-                Console.WriteLine("Czy chcesz aby program zapisał wynik do pliku tekstowego? tak(Y) nie(N)");
+                bool memory;
+
+                Console.WriteLine("\n****** Witam w programie do obliczania siły zwarcia. Jeżeli chcesz zakończyć wpisz q lub Ctrl+c ******\n");
+
+                Console.WriteLine("Czy chcesz aby program zapisał wynik do pliku tekstowego? TAK [Y] NIE [N]");
                 var input = Console.ReadLine();
 
-                if (input == "Y" || input == "y")
+                if (input == "Y" || input == "y" || input == "T" || input == "t" || input == "tak" || input == "TAK")
                 {
                     force = new ForceSave("Any");
+                    memory = true;
                 }
 
-                else if (input == "q")
+                else if (input == "Q" || input == "q")
                 {
                     break;
                 }
@@ -34,6 +36,7 @@ namespace MouldingApp
                 else
                 {
                     force = new ForceMemory("Any");
+                    memory = false;
                 }
 
                 try
@@ -41,46 +44,53 @@ namespace MouldingApp
                     Console.WriteLine("Podaj nazwę formy");
                     input = Console.ReadLine();
                     force.SetMouldID(input);
-                    Console.WriteLine("Czy detal jest okrągły? tak(Y) nie(N)");
+
+                    Console.WriteLine("Czy detal jest okrągły? TAK [Y] NIE [N]");
                     input = Console.ReadLine();
                     force.ShapeSet(input);
 
-                    if (input == "Y" || input == "y")
+                    if (input == "Y" || input == "y" || input == "T" || input == "t" || input == "tak" || input == "TAK")
                     {
-                        Console.WriteLine($"Podaj średnicę detalu (centymetry)");
+                        Console.WriteLine($"Podaj ŚREDNICĘ detalu (milimetry)");
                         input = Console.ReadLine();
                         force.DiameterSet(input);
                     }
 
                     else
                     {
-                        Console.WriteLine($"Podaj długość detalu np. 3,5 (centymetry)");
+                        Console.WriteLine($"Podaj DŁUGOŚĆ detalu (milimetry)");
                         input = Console.ReadLine();
                         force.WidthSet(input);
-                        Console.WriteLine($"Podaj szerokość detalu np. 3,5 (centymetry)");
+
+                        Console.WriteLine($"Podaj SZEROKOŚĆ detalu (milimetry)");
                         input = Console.ReadLine();
                         force.HightSet(input);
                     }
 
-                    Console.WriteLine($"Podaj ilość gnazd w formie");
+                    Console.WriteLine($"Podaj ILOŚĆ GNIAZD w formie");
                     input = Console.ReadLine();
-                    force.SetNumberOfCavites(double.Parse(input));
-                    Console.WriteLine($"Podaj pole powierzchni wlewka np. 3,5 (cm2) jeżeli brak wpisz 0");
+                    force.SetNumberOfCavites(input);
+
+                    Console.WriteLine($"Podaj POLE powierzchni WLEWKA np. 3,5 (cm2) jeżeli brak wpisz 0");
                     input = Console.ReadLine();
-                    force.SetRunnerProjectedArea(double.Parse(input));
-                    Console.WriteLine($"Podaj grubość ścianki, max 2 np. 1,9 (milimetry)");
+                    force.SetRunnerProjectedArea(input);
+
+                    Console.WriteLine($"Podaj GRUBOŚĆ ŚCIANKI, max 2 np. 1,9 (milimetry)");
                     input = Console.ReadLine();
                     force.ThicknessSet(input);
-                    Console.WriteLine($"Podaj najdłóższy odcinek płynięcia materiału (milimetry)");
+
+                    Console.WriteLine($"Podaj najdłóższy ODCINEK PŁYNIĘCIA materiału (milimetry)");
                     input = Console.ReadLine();
                     force.LongestMeltSet(input);
-                    Console.WriteLine("Wprowadz nazwę tworzywa (np PA6, aby wyświetlić pełną listę wpisz (L))");
+
+                    Console.WriteLine("Wprowadz NAZWĘ TWORZYWA (np PA6, aby wyświetlić pełną listę wpisz (L))");
                     input = Console.ReadLine();
 
                     if (input == "L" || input == "l")
                     {
                         Console.WriteLine();
                         force.PrintList();
+
                         Console.WriteLine($"Wprowadz nazwę tworzywa");
                         input = Console.ReadLine();
                         force.MaterialViscosity(input);
@@ -103,12 +113,15 @@ namespace MouldingApp
                     Console.WriteLine(ex.Message);
                 }
 
-                Console.WriteLine("Chcesz otworzyć całą historię obliczeń? tak(Y) nie(N)");
-                input = Console.ReadLine();
-
-                if (input == "Y" || input == "y" || input == "T"  || input == "t")
+                if (memory == true)
                 {
-                    forceSave.GetStatiscics();
+                    Console.WriteLine("Chcesz otworzyć całą historię obliczeń? TAK [Y] NIE [N]");
+                    input = Console.ReadLine();
+
+                    if (input == "Y" || input == "y" || input == "T" || input == "t" || input == "tak" || input == "TAK")
+                    {
+                        forceSave.GetStatiscics();
+                    }
                 }
             }
         }

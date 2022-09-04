@@ -48,3 +48,58 @@ Min Siła Zwarcia 11 TON
 Optymalna Siła Zwarcia 12 TON
 
 
+casing
+
+Bryła Prostokątna
+Długość 40cm
+Szerokość 80cm
+Grubość ścianki 2mm
+Droga płynięcia 20mm
+Viscosity 5,2
+Stosunek drogi płynięcia do grubości detalu 10:1
+Ciśnienie z wykresu 82bar
+Ciśnienie w gnieżdzie 424bar
+Powierzchnia detalu 32,000cm2
+Powierzchnia wlewka 4cm2
+Powierzchnia wtrysku 132,000cm2
+Ilość gniazd 4szt.
+Min Siła Zwarcia 56 TON
+Optymalna Siła Zwarcia 62 TON
+
+
+kk
+
+Bryła Okrągła
+Średnica 50cm
+Grubość ścianki 2mm
+Droga płynięcia 20mm
+Viscosity 5,2
+Stosunek drogi płynięcia do grubości detalu 10:1
+Ciśnienie z wykresu 82bar
+Ciśnienie w gnieżdzie 424bar
+Powierzchnia detalu 19,625cm2
+Powierzchnia wlewka 4cm2
+Powierzchnia wtrysku 82,500cm2
+Ilość gniazd 4szt.
+Min Siła Zwarcia 35 TON
+Optymalna Siła Zwarcia 38 TON
+
+
+
+
+Bryła Okrągła
+Średnica 55cm
+Grubość ścianki 2mm
+Droga płynięcia 20mm
+Viscosity 5,2
+Stosunek drogi płynięcia do grubości detalu 10:1
+Ciśnienie z wykresu 82bar
+Ciśnienie w gnieżdzie 424bar
+Powierzchnia detalu 23,746cm2
+Powierzchnia wlewka 4cm2
+Powierzchnia wtrysku 98,985cm2
+Ilość gniazd 4szt.
+Min Siła Zwarcia 42 TON
+Optymalna Siła Zwarcia 46 TON
+
+

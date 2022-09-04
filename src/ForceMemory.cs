@@ -12,18 +12,18 @@ namespace MouldingApp
 
             if (this.Shape == true)
             {
-                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()} cm");
+                Console.WriteLine($"Średnica detalu {this.Diameter.ToString()}cm");
             }
 
             else
             {
-                Console.WriteLine($"Długość Detalu {this.Width.ToString()} cm");
-                Console.WriteLine($"Szerokość Detalu {this.Hight.ToString()} cm");
+                Console.WriteLine($"Długość detalu {this.Width.ToString()}cm");
+                Console.WriteLine($"Szerokość detalu {this.Hight.ToString()}cm");
             }
 
             Console.WriteLine($"Powierzchnia detalu {this.Area:N3}cm2");
-            Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()} cm2");
-            Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+            Console.WriteLine($"Powierzchnia wlewka {this.RunnerProjectedArea.ToString()}cm2");
+            Console.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()}szt.");
             Console.WriteLine($"Powierzchnia wtrysku {this.AreaAll:N3}cm2");
             Console.WriteLine($"Min Siła Zwarcia {this.Force:N0} TON");
             Console.WriteLine($"Optymalna Siła Zwarcia {this.ForceSafety:N0} TON\n\n");
@@ -45,7 +45,7 @@ namespace MouldingApp
 
             if (double.TryParse(diameter, out double result))
             {
-                Console.WriteLine($"OK {result}");
+                Console.WriteLine($"OK {result}mm\n");
             }
 
             else
@@ -61,13 +61,13 @@ namespace MouldingApp
 
             if (double.TryParse(hight, out double result))
             {
-                Console.WriteLine($"OK mam to {result}");
+                Console.WriteLine($"OK mam to {result}mm\n");
             }
 
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {hight}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(hight)}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(hight)}\n");
             }
         }
 
@@ -77,13 +77,13 @@ namespace MouldingApp
 
             if (double.TryParse(melt, out double result))
             {
-                Console.WriteLine($"OK {result}");
+                Console.WriteLine($"OK {result}mm\n");
             }
 
             else
             {
                 Console.WriteLine($"Błąd! nieprawidłowa liczba {melt}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(melt)}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(melt)}\n");
             }
         }
 
@@ -99,9 +99,70 @@ namespace MouldingApp
             {
                 Console.WriteLine($"Błąd brak materiału na liście {this.Material}");
                 Console.WriteLine("lub");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(material)}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(material)}\n");
             }
             return base.MaterialViscosity(material);
+        }
+
+        public override void SetNumberOfCavites(string numberOfCavites)
+        {
+            base.LongestMeltSet(numberOfCavites);
+
+            if (double.TryParse(numberOfCavites, out double result))
+            {
+                if (result >= 2 && result <=4)
+                {
+                    Console.WriteLine($"OK {result} gniazda\n");
+                }
+
+                else if(result > 4)
+                {
+                    Console.WriteLine($"OK {result} gniazd\n");
+                }
+
+                else
+                {
+                    Console.WriteLine("OK jedno gniazdo\n");
+                }
+                
+            }
+
+            else
+            {
+                Console.WriteLine($"Błąd! nieprawidłowa liczba {numberOfCavites}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(numberOfCavites)}\n");
+            }
+        }
+
+        public override void SetRunnerProjectedArea(string runnerProjectedArea)
+        {
+            base.LongestMeltSet(runnerProjectedArea);
+
+            if (double.TryParse(runnerProjectedArea, out double result))
+            {
+                Console.WriteLine($"OK {result}cm2\n");
+            }
+
+            else
+            {
+                Console.WriteLine($"Błąd! nieprawidłowa liczba {runnerProjectedArea}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(runnerProjectedArea)}\n");
+            }
+        }
+
+        public override void ShapeSet(string shape)
+        {
+            base.LongestMeltSet(shape);
+
+            if (this.Shape == true)
+            {
+                Console.WriteLine("OK detal jest okrągły\n");
+            }
+
+            else
+            {
+                Console.WriteLine("OK detal jest prostokątny\n");
+            }
         }
 
         public override void ThicknessSet(string thickness)
@@ -110,14 +171,14 @@ namespace MouldingApp
 
             if (double.TryParse(thickness, out double result) && result > 0 && result <= 2)
             {
-                Console.WriteLine($"OK {result}");
+                Console.WriteLine($"OK {result}mm\n");
             }
 
             else
             {
                 Console.WriteLine($"Błąd! liczba poza zakresem {thickness}");
                 Console.WriteLine("lub");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(thickness)}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(thickness)}\n");
             }
         }
 
@@ -127,13 +188,13 @@ namespace MouldingApp
 
             if (double.TryParse(width, out double result))
             {
-                Console.WriteLine($"OK {result}");
+                Console.WriteLine($"OK {result}mm\n");
             }
 
             else
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {width}");
-                throw new ArgumentException($"Niewłaściwa składnia {nameof(width)}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(width)}\n");
             }
         }
     }

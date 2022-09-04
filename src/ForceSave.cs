@@ -43,12 +43,12 @@ namespace MouldingApp
 
             using (var writer = File.AppendText($"{fileName}"))
             {
-                writer.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+                writer.WriteLine($"Ilość gniazd {this.NumberOfCavites.ToString()}szt.");
             }
 
             using (var writer = File.AppendText($"{fileNameAudit}"))
             {
-                writer.WriteLine($"{DateTime.Now}   Ilość gniazd {this.NumberOfCavites.ToString()} szt.");
+                writer.WriteLine($"{DateTime.Now}   Ilość gniazd {this.NumberOfCavites.ToString()}szt.");
             }
 
             using (var writer = File.AppendText($"{fileName}"))

@@ -48,3 +48,58 @@
 02.09.2022 17:18:01   Optymalna Siła Zwarcia 12 TON
 
 
+04.09.2022 10:17:41   casing
+
+04.09.2022 10:17:47   Bryła Prostokątna
+04.09.2022 10:17:54   Długość 40cm
+04.09.2022 10:17:57   Szerokość 80cm
+04.09.2022 10:18:09   Grubość ścianki 2mm
+04.09.2022 10:18:14   Droga płynięcia 20mm
+04.09.2022 10:18:19   Viscosity 5,2
+04.09.2022 10:18:19   Stosunek drogi płynięcia do grubości detalu 10:1
+04.09.2022 10:18:19   Ciśnienie z wykresu 82bar
+04.09.2022 10:18:19   Ciśnienie w gnieżdzie 424bar
+04.09.2022 10:18:19   Powierzchnia detalu 32,000cm2
+04.09.2022 10:18:19   Powierzchnia wlewka 4cm2
+04.09.2022 10:18:19   Powierzchnia wtrysku 132,000cm2
+04.09.2022 10:18:19   Ilość gniazd 4szt.
+04.09.2022 10:18:19   Min Siła Zwarcia 56 TON
+04.09.2022 10:18:19   Optymalna Siła Zwarcia 62 TON
+
+
+04.09.2022 10:42:13   kk
+
+04.09.2022 10:42:19   Bryła Okrągła
+04.09.2022 10:42:36   Średnica 50cm
+04.09.2022 10:42:53   Grubość ścianki 2mm
+04.09.2022 10:43:06   Droga płynięcia 20mm
+04.09.2022 10:43:10   Viscosity 5,2
+04.09.2022 10:43:10   Stosunek drogi płynięcia do grubości detalu 10:1
+04.09.2022 10:43:10   Ciśnienie z wykresu 82bar
+04.09.2022 10:43:10   Ciśnienie w gnieżdzie 424bar
+04.09.2022 10:43:10   Powierzchnia detalu 19,625cm2
+04.09.2022 10:43:10   Powierzchnia wlewka 4cm2
+04.09.2022 10:43:10   Powierzchnia wtrysku 82,500cm2
+04.09.2022 10:43:10   Ilość gniazd 4szt.
+04.09.2022 10:43:10   Min Siła Zwarcia 35 TON
+04.09.2022 10:43:10   Optymalna Siła Zwarcia 38 TON
+
+
+04.09.2022 10:44:31   
+
+04.09.2022 10:44:35   Bryła Okrągła
+04.09.2022 10:44:37   Średnica 55cm
+04.09.2022 10:44:56   Grubość ścianki 2mm
+04.09.2022 10:45:01   Droga płynięcia 20mm
+04.09.2022 10:45:03   Viscosity 5,2
+04.09.2022 10:45:03   Stosunek drogi płynięcia do grubości detalu 10:1
+04.09.2022 10:45:03   Ciśnienie z wykresu 82bar
+04.09.2022 10:45:03   Ciśnienie w gnieżdzie 424bar
+04.09.2022 10:45:04   Powierzchnia detalu 23,746cm2
+04.09.2022 10:45:04   Powierzchnia wlewka 4cm2
+04.09.2022 10:45:04   Powierzchnia wtrysku 98,985cm2
+04.09.2022 10:45:04   Ilość gniazd 4szt.
+04.09.2022 10:45:04   Min Siła Zwarcia 42 TON
+04.09.2022 10:45:04   Optymalna Siła Zwarcia 46 TON
+
+
