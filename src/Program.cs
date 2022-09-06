@@ -67,6 +67,10 @@ namespace MouldingApp
                         force.HightSet(input);
                     }
 
+                    Console.WriteLine($"Podaj POLE obszaru detalu do odliczenia, jeżeli brak wpisz [0] (cm2)");
+                    input = Console.ReadLine();
+                    force.VoidArea(input);
+
                     Console.WriteLine($"Podaj ILOŚĆ GNIAZD w formie");
                     input = Console.ReadLine();
                     force.SetNumberOfCavites(input);
@@ -79,7 +83,7 @@ namespace MouldingApp
                     input = Console.ReadLine();
                     force.ThicknessSet(input);
 
-                    Console.WriteLine($"Podaj najdłóższy ODCINEK PŁYNIĘCIA materiału (milimetry)");
+                    Console.WriteLine($"Podaj najdłuższy ODCINEK PŁYNIĘCIA materiału (milimetry)");
                     input = Console.ReadLine();
                     force.LongestMeltSet(input);
 

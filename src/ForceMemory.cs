@@ -106,7 +106,7 @@ namespace MouldingApp
 
         public override void SetNumberOfCavites(string numberOfCavites)
         {
-            base.LongestMeltSet(numberOfCavites);
+            base.SetNumberOfCavites(numberOfCavites);
 
             if (double.TryParse(numberOfCavites, out double result))
             {
@@ -136,7 +136,7 @@ namespace MouldingApp
 
         public override void SetRunnerProjectedArea(string runnerProjectedArea)
         {
-            base.LongestMeltSet(runnerProjectedArea);
+            base.SetRunnerProjectedArea(runnerProjectedArea);
 
             if (double.TryParse(runnerProjectedArea, out double result))
             {
@@ -152,7 +152,7 @@ namespace MouldingApp
 
         public override void ShapeSet(string shape)
         {
-            base.LongestMeltSet(shape);
+            base.ShapeSet(shape);
 
             if (this.Shape == true)
             {
@@ -195,6 +195,22 @@ namespace MouldingApp
             {
                 Console.WriteLine($"Błąd źle wpisałeś tą liczbę {width}");
                 throw new ArgumentException($"Niewłaściwa składnia {nameof(width)}\n");
+            }
+        }
+
+        public override void VoidArea(string voidArea)
+        {
+            base.VoidArea(voidArea);
+
+            if (double.TryParse(voidArea, out double result))
+            {
+                Console.WriteLine($"OK {result}cm2\n");
+            }
+
+            else
+            {
+                Console.WriteLine($"Błąd! nieprawidłowa liczba {voidArea}");
+                throw new ArgumentException($"Niewłaściwa składnia {nameof(voidArea)}\n");
             }
         }
     }

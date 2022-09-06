@@ -245,6 +245,22 @@ namespace MouldingApp
                 writer.WriteLine($"{DateTime.Now}   Długość {width}cm");
             }
         }
+
+        public override void VoidArea(string voidArea)
+        {
+            base.VoidArea(voidArea);
+
+            using (var writer = File.AppendText($"{fileName}"))
+            {
+                writer.WriteLine($"Pole odliczanej powierzchni {voidArea}cm2");
+            }
+
+            using (var writer = File.AppendText($"{fileNameAudit}"))
+            {
+                writer.WriteLine($"{DateTime.Now}   Pole odliczanej powierzchni {voidArea}cm2");
+            }
+        }
+
         public override Statiscics GetStatiscics()
         {
             var result = new Statiscics();

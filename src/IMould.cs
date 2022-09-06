@@ -18,6 +18,7 @@ namespace MouldingApp
         void PrintList();
         void SetNumberOfCavites(string numberOfCavites);
         void SetRunnerProjectedArea(string runnerProjectedArea);
+        void VoidArea(string voidArea);
         Statiscics GetStatiscics();
         event AddedDelegate Added;
     }

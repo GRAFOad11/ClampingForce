@@ -31,6 +31,7 @@ namespace MouldingApp
         public double ForceSafety { get; set; }
         public double Area { get; set; }
         public double AreaAll { get; set; }
+        public double Voidarea { get; set; }
 
         public virtual void WidthSet(string width)
         {
@@ -167,12 +168,12 @@ namespace MouldingApp
         {
             if (this.Shape == true)
             {
-                this.Area = (3.14 * (this.Diameter * this.Diameter)) / 4;
+                this.Area = (3.14 * (this.Diameter * this.Diameter)) / 4 - this.Voidarea;
             }
 
             else
             {
-                this.Area = this.Width * this.Hight;
+                this.Area = this.Width * this.Hight - this.Voidarea;
             }
 
             this.AreaAll = (this.Area * this.NumberOfCavites) + this.RunnerProjectedArea;
@@ -226,10 +227,6 @@ namespace MouldingApp
             if (double.TryParse(numberOfCavites, out double result))
             {
                 this.NumberOfCavites = result;
-                if (Added != null)
-                {
-                    Added(this, new EventArgs(), numberOfCavites);
-                }
             }
         }
 
@@ -238,10 +235,6 @@ namespace MouldingApp
             if (double.TryParse(runnerProjectedArea, out double result))
             {
                 this.RunnerProjectedArea = result;
-                if (Added != null)
-                {
-                    Added(this, new EventArgs(), runnerProjectedArea);
-                }
             }
         }
 
@@ -258,6 +251,14 @@ namespace MouldingApp
                 }
             }
             return result;
+        }
+
+        public virtual void VoidArea(string voidArea)
+        {
+            if (double.TryParse(voidArea, out double result))
+            {
+                this.Voidarea = result;
+            }
         }
     }
 }
